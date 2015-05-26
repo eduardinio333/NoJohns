@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="NoJohnsEntities-Web.config Connection String" description="NoJohnsEntities Connection String used in web.config by the application to access the database." defaultValue="metadata=res://*/Models.NoJohnsEntities.csdl|res://*/Models.NoJohnsEntities.ssdl|res://*/Models.NoJohnsEntities.msl;provider=System.Data.SqlClient;provider connection string='data source=jmqqmehzci.database.windows.net;initial catalog=NoJohns;persist security info=True;user id=NoJohns;password=&quot;7c=cDNII%$CREE4_2vb5C!L.&quot;;multipleactiveresultsets=True;application name=EntityFramework'" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="c:\\Users\\eduardo\\Documents\\Visual\ Studio\ 2013\\Projects\\NoJohns\\NoJohns\.API\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='NoJohnsEntities']/@connectionString" />
+  </parameter>
+</parameters>
