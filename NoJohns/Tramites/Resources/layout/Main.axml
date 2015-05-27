@@ -7,6 +7,7 @@
         android:src="@drawable/logo"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="20px"
         android:id="@+id/Logo" />
     <EditText
         android:layout_width="match_parent"
@@ -27,4 +28,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/Login" />
+    <Button
+        android:text="Sign Up"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/SignUpButton" />
 </LinearLayout>

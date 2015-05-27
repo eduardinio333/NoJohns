@@ -45,21 +45,26 @@ namespace Tramites
 			EditText pass = FindViewById<EditText> (Resource.Id.Pass);
 			EditText user = FindViewById<EditText>(Resource.Id.User);
 			ImageView logo = FindViewById<ImageView> (Resource.Id.Logo);
+			Button SignUpButton = FindViewById<Button> (Resource.Id.SignUpButton);
 			user.Text = null;
 
 			button.Click += delegate 
 			{
-				/*
+				
 				var client= new RestClient ("http://nojohns-api.azurewebsites.net/");
 				var request= new RestRequest("api/clients/1",Method.GET);
 				request.RequestFormat = DataFormat.Json; 
 				var response = client.Execute<Login> (request);
 				user.Text= response.Data.Comment;
-				*/
 				var intent = new Intent(this, typeof(Profile));
 				StartActivity(intent);
 				Finish();
 			};
+			SignUpButton.Click += delegate {
+				var intent = new Intent(this, typeof(SignUpActivity));
+				StartActivity(intent);
+			};
+
 		}
 	}
 }
