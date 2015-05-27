@@ -2,7 +2,7 @@
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server 2005, 2008, 2012 and Azure
 -- --------------------------------------------------
--- Date Created: 05/27/2015 11:46:18
+-- Date Created: 05/27/2015 14:42:49
 -- Generated from EDMX file: C:\NoJohns\NoJohns\NoJohns.API\Models\NoJohnsModel.edmx
 -- --------------------------------------------------
 
@@ -17,11 +17,38 @@ GO
 -- Dropping existing FOREIGN KEY constraints
 -- --------------------------------------------------
 
+IF OBJECT_ID(N'[dbo].[FK_ClientsComments]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[CommentsSet] DROP CONSTRAINT [FK_ClientsComments];
+GO
+IF OBJECT_ID(N'[dbo].[FK_ProceduresTypes]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[ProceduresSet] DROP CONSTRAINT [FK_ProceduresTypes];
+GO
+IF OBJECT_ID(N'[dbo].[FK_ClientsClientsProcedures]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[ClientsProceduresSet] DROP CONSTRAINT [FK_ClientsClientsProcedures];
+GO
+IF OBJECT_ID(N'[dbo].[FK_ProceduresClientsProcedures]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[ClientsProceduresSet] DROP CONSTRAINT [FK_ProceduresClientsProcedures];
+GO
 
 -- --------------------------------------------------
 -- Dropping existing tables
 -- --------------------------------------------------
 
+IF OBJECT_ID(N'[dbo].[ClientsSet]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[ClientsSet];
+GO
+IF OBJECT_ID(N'[dbo].[CommentsSet]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[CommentsSet];
+GO
+IF OBJECT_ID(N'[dbo].[TypesSet]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[TypesSet];
+GO
+IF OBJECT_ID(N'[dbo].[ProceduresSet]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[ProceduresSet];
+GO
+IF OBJECT_ID(N'[dbo].[ClientsProceduresSet]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[ClientsProceduresSet];
+GO
 
 -- --------------------------------------------------
 -- Creating all tables
@@ -30,9 +57,9 @@ GO
 -- Creating table 'ClientsSet'
 CREATE TABLE [dbo].[ClientsSet] (
     [Id] int IDENTITY(1,1) NOT NULL,
-    [User] nvarchar(max)  NOT NULL,
+    [Username] nvarchar(50)  NOT NULL,
     [Password] nvarchar(max)  NOT NULL,
-    [Mail] nvarchar(max)  NOT NULL,
+    [Mail] nvarchar(50)  NOT NULL,
     [fName] nvarchar(max)  NOT NULL,
     [lName] nvarchar(max)  NOT NULL,
     [Address] nvarchar(max)  NULL,
