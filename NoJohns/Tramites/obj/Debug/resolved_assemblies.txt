@@ -1,0 +1,2 @@
+C:\Users\Memo\Documents\Projects\Tramites\bin\Debug\Tramites.dll
+C:\Users\Memo\Documents\Projects\Tramites\Components\restsharp-105.0.1.0\lib\android\RestSharp.MonoDroid.dll

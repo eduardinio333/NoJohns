@@ -1,0 +1,23 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tramites", "Tramites.csproj", "{932E1626-66F1-4372-8C13-68FF42D7DEC2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tramites.UITests", "Tramites.UITests\Tramites.UITests.csproj", "{8DE380DE-F463-4BEF-B73F-FCDF63347D17}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8DE380DE-F463-4BEF-B73F-FCDF63347D17}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8DE380DE-F463-4BEF-B73F-FCDF63347D17}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8DE380DE-F463-4BEF-B73F-FCDF63347D17}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8DE380DE-F463-4BEF-B73F-FCDF63347D17}.Release|Any CPU.Build.0 = Release|Any CPU
+		{932E1626-66F1-4372-8C13-68FF42D7DEC2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{932E1626-66F1-4372-8C13-68FF42D7DEC2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{932E1626-66F1-4372-8C13-68FF42D7DEC2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{932E1626-66F1-4372-8C13-68FF42D7DEC2}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
