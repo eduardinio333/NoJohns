@@ -4,20 +4,22 @@
     <Key>
       <PropertyRef Name="Id" />
     </Key>
-    <Property Name="Id" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Id" Type="String" Nullable="false" />
     <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
     <Property Name="fName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
     <Property Name="lName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-    <Property Name="Address" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Address" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
     <Property Name="Phone" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
     <NavigationProperty Name="Comment" Relationship="Self.FK_Comments_ToTable" FromRole="Clients" ToRole="Comments" />
     <NavigationProperty Name="ClientsProcedures" Relationship="Self.FK_Table_Clients" FromRole="Clients" ToRole="ClientsProcedures" />
+    <Property Name="User" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Mail" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
   </EntityType>
   <EntityType Name="ClientsProcedure">
     <Key>
       <PropertyRef Name="ProcedureId" />
     </Key>
-    <Property Name="ClientId" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ClientId" Type="String" Nullable="false" />
     <Property Name="ProcedureId" Type="Int32" Nullable="false" />
     <Property Name="ClientType" Type="Boolean" Nullable="false" />
     <NavigationProperty Name="Client" Relationship="Self.FK_Table_Clients" FromRole="ClientsProcedures" ToRole="Clients" />
@@ -26,11 +28,13 @@
   <EntityType Name="Comment">
     <Key>
       <PropertyRef Name="ClientId" />
+      <PropertyRef Name="Id" />
     </Key>
-    <Property Name="ClientId" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-    <Property Name="Comment1" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ClientId" Type="String" Nullable="false" />
+    <Property Name="Comment1" Type="String" MaxLength="250" FixedLength="false" Unicode="false" Nullable="false" />
     <Property Name="ClientType" Type="Boolean" Nullable="false" />
     <NavigationProperty Name="Client" Relationship="Self.FK_Comments_ToTable" FromRole="Comments" ToRole="Clients" />
+    <Property Name="Id" Type="Int32" Nullable="false" />
   </EntityType>
   <EntityType Name="Procedure">
     <Key>

@@ -1,0 +1,339 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="NoJohnsModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2012.Azure" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="NoJohnsModelStoreContainer">
+    <EntitySet Name="ClientsSet" EntityType="NoJohnsModel.Store.ClientsSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="CommentsSet" EntityType="NoJohnsModel.Store.CommentsSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="TypesSet" EntityType="NoJohnsModel.Store.TypesSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ProceduresSet" EntityType="NoJohnsModel.Store.ProceduresSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ClientsProceduresSet" EntityType="NoJohnsModel.Store.ClientsProceduresSet" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="ClientsComments" Association="NoJohnsModel.Store.ClientsComments">
+      <End Role="Clients" EntitySet="ClientsSet" />
+      <End Role="Comments" EntitySet="CommentsSet" />
+    </AssociationSet>
+    <AssociationSet Name="ProceduresTypes" Association="NoJohnsModel.Store.ProceduresTypes">
+      <End Role="Procedures" EntitySet="ProceduresSet" />
+      <End Role="Types" EntitySet="TypesSet" />
+    </AssociationSet>
+    <AssociationSet Name="ClientsClientsProcedures" Association="NoJohnsModel.Store.ClientsClientsProcedures">
+      <End Role="Clients" EntitySet="ClientsSet" />
+      <End Role="ClientsProcedures" EntitySet="ClientsProceduresSet" />
+    </AssociationSet>
+    <AssociationSet Name="ProceduresClientsProcedures" Association="NoJohnsModel.Store.ProceduresClientsProcedures">
+      <End Role="Procedures" EntitySet="ProceduresSet" />
+      <End Role="ClientsProcedures" EntitySet="ClientsProceduresSet" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="ClientsSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="User" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Password" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Mail" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="fName" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="lName" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Address" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Phone" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CommentsSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ClientId" Type="int" Nullable="false" />
+    <Property Name="Comment" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="ClientType" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TypesSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ProcedureName" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ProceduresSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Description" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="TypesId" Type="int" Nullable="false" />
+    <Property Name="Price" Type="decimal" Nullable="false" />
+    <Property Name="Status" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ClientsProceduresSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ClientType" Type="bit" Nullable="false" />
+    <Property Name="ClientId" Type="int" Nullable="false" />
+    <Property Name="ProcedureId" Type="int" Nullable="false" />
+  </EntityType>
+  <Association Name="ClientsComments">
+    <End Role="Clients" Type="NoJohnsModel.Store.ClientsSet" Multiplicity="1" />
+    <End Role="Comments" Type="NoJohnsModel.Store.CommentsSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Clients">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Comments">
+        <PropertyRef Name="ClientId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="ProceduresTypes">
+    <End Role="Procedures" Type="NoJohnsModel.Store.ProceduresSet" Multiplicity="*" />
+    <End Role="Types" Type="NoJohnsModel.Store.TypesSet" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="Types">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Procedures">
+        <PropertyRef Name="TypesId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="ClientsClientsProcedures">
+    <End Role="Clients" Type="NoJohnsModel.Store.ClientsSet" Multiplicity="1" />
+    <End Role="ClientsProcedures" Type="NoJohnsModel.Store.ClientsProceduresSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Clients">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ClientsProcedures">
+        <PropertyRef Name="ClientId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="ProceduresClientsProcedures">
+    <End Role="Procedures" Type="NoJohnsModel.Store.ProceduresSet" Multiplicity="1" />
+    <End Role="ClientsProcedures" Type="NoJohnsModel.Store.ClientsProceduresSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Procedures">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ClientsProcedures">
+        <PropertyRef Name="ProcedureId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema xmlns="http://schemas.microsoft.com/ado/2009/11/edm" xmlns:cg="http://schemas.microsoft.com/ado/2006/04/codegeneration" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="NoJohnsModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" annotation:UseStrongSpatialTypes="false">
+        <EntityContainer Name="NoJohnsModelContainer" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="ClientsSet" EntityType="NoJohnsModel.Clients" />
+          <EntitySet Name="CommentsSet" EntityType="NoJohnsModel.Comments" />
+          <AssociationSet Name="ClientsComments" Association="NoJohnsModel.ClientsComments">
+            <End Role="Clients" EntitySet="ClientsSet" />
+            <End Role="Comments" EntitySet="CommentsSet" />
+          </AssociationSet>
+          <EntitySet Name="TypesSet" EntityType="NoJohnsModel.Types" />
+          <EntitySet Name="ProceduresSet" EntityType="NoJohnsModel.Procedures" />
+          <AssociationSet Name="ProceduresTypes" Association="NoJohnsModel.ProceduresTypes">
+            <End Role="Procedures" EntitySet="ProceduresSet" />
+            <End Role="Types" EntitySet="TypesSet" />
+          </AssociationSet>
+          <EntitySet Name="ClientsProceduresSet" EntityType="NoJohnsModel.ClientsProcedures" />
+          <AssociationSet Name="ClientsClientsProcedures" Association="NoJohnsModel.ClientsClientsProcedures">
+            <End Role="Clients" EntitySet="ClientsSet" />
+            <End Role="ClientsProcedures" EntitySet="ClientsProceduresSet" />
+          </AssociationSet>
+          <AssociationSet Name="ProceduresClientsProcedures" Association="NoJohnsModel.ProceduresClientsProcedures">
+            <End Role="Procedures" EntitySet="ProceduresSet" />
+            <End Role="ClientsProcedures" EntitySet="ClientsProceduresSet" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Clients">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="User" Type="String" Nullable="false" />
+          <Property Name="Password" Type="String" Nullable="false" />
+          <Property Name="Mail" Type="String" Nullable="false" />
+          <Property Name="fName" Type="String" Nullable="false" />
+          <Property Name="lName" Type="String" Nullable="false" />
+          <Property Name="Address" Type="String" Nullable="true" />
+          <Property Name="Phone" Type="String" Nullable="false" />
+          <NavigationProperty Name="Comments" Relationship="NoJohnsModel.ClientsComments" FromRole="Clients" ToRole="Comments" />
+          <NavigationProperty Name="ClientsProcedures" Relationship="NoJohnsModel.ClientsClientsProcedures" FromRole="Clients" ToRole="ClientsProcedures" />
+        </EntityType>
+        <EntityType Name="Comments" >
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ClientId" Type="Int32" Nullable="false" />
+          <Property Name="Comment" Type="String" Nullable="false" />
+          <Property Name="ClientType" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="Clients" Relationship="NoJohnsModel.ClientsComments" FromRole="Comments" ToRole="Clients" />
+        </EntityType>
+        <Association Name="ClientsComments">
+          <End Type="NoJohnsModel.Clients" Role="Clients" Multiplicity="1" />
+          <End Type="NoJohnsModel.Comments" Role="Comments" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Clients">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Comments">
+              <PropertyRef Name="ClientId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="Types">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ProcedureName" Type="String" Nullable="false" />
+          <NavigationProperty Name="Procedures" Relationship="NoJohnsModel.ProceduresTypes" FromRole="Types" ToRole="Procedures" />
+        </EntityType>
+        <EntityType Name="Procedures">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Description" Type="String" Nullable="false" />
+          <Property Name="TypesId" Type="Int32" Nullable="false" />
+          <Property Name="Price" Type="Decimal" Nullable="false" />
+          <Property Name="Status" Type="String" Nullable="false" />
+          <NavigationProperty Name="Types" Relationship="NoJohnsModel.ProceduresTypes" FromRole="Procedures" ToRole="Types" />
+          <NavigationProperty Name="ClientsProcedures" Relationship="NoJohnsModel.ProceduresClientsProcedures" FromRole="Procedures" ToRole="ClientsProcedures" />
+        </EntityType>
+        <Association Name="ProceduresTypes">
+          <End Type="NoJohnsModel.Procedures" Role="Procedures" Multiplicity="*" />
+          <End Type="NoJohnsModel.Types" Role="Types" Multiplicity="1" />
+          <ReferentialConstraint>
+            <Principal Role="Types">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Procedures">
+              <PropertyRef Name="TypesId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="ClientsProcedures" >
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns="http://schemas.microsoft.com/ado/2009/11/edm" />
+          <Property Name="ClientType" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="Clients" Relationship="NoJohnsModel.ClientsClientsProcedures" FromRole="ClientsProcedures" ToRole="Clients" />
+          <Property Name="ClientId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Procedures" Relationship="NoJohnsModel.ProceduresClientsProcedures" FromRole="ClientsProcedures" ToRole="Procedures" />
+          <Property Name="ProcedureId" Type="Int32" Nullable="false" />
+        </EntityType>
+        <Association Name="ClientsClientsProcedures">
+          <End Type="NoJohnsModel.Clients" Role="Clients" Multiplicity="1" />
+          <End Type="NoJohnsModel.ClientsProcedures" Role="ClientsProcedures" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Clients">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ClientsProcedures">
+              <PropertyRef Name="ClientId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="ProceduresClientsProcedures">
+          <End Type="NoJohnsModel.Procedures" Role="Procedures" Multiplicity="1" />
+          <End Type="NoJohnsModel.ClientsProcedures" Role="ClientsProcedures" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Procedures">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ClientsProcedures">
+              <PropertyRef Name="ProcedureId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+    <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="NoJohnsModelStoreContainer" CdmEntityContainer="NoJohnsModelContainer">
+    <EntitySetMapping Name="ClientsSet">
+      <EntityTypeMapping TypeName="IsTypeOf(NoJohnsModel.Clients)">
+        <MappingFragment StoreEntitySet="ClientsSet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="User" ColumnName="User" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="Mail" ColumnName="Mail" />
+          <ScalarProperty Name="fName" ColumnName="fName" />
+          <ScalarProperty Name="lName" ColumnName="lName" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CommentsSet">
+      <EntityTypeMapping TypeName="IsTypeOf(NoJohnsModel.Comments)">
+        <MappingFragment StoreEntitySet="CommentsSet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="ClientId" ColumnName="ClientId" />
+          <ScalarProperty Name="Comment" ColumnName="Comment" />
+          <ScalarProperty Name="ClientType" ColumnName="ClientType" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TypesSet">
+      <EntityTypeMapping TypeName="IsTypeOf(NoJohnsModel.Types)">
+        <MappingFragment StoreEntitySet="TypesSet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="ProcedureName" ColumnName="ProcedureName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ProceduresSet">
+      <EntityTypeMapping TypeName="IsTypeOf(NoJohnsModel.Procedures)">
+        <MappingFragment StoreEntitySet="ProceduresSet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="TypesId" ColumnName="TypesId" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ClientsProceduresSet">
+      <EntityTypeMapping TypeName="IsTypeOf(NoJohnsModel.ClientsProcedures)">
+        <MappingFragment StoreEntitySet="ClientsProceduresSet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="ClientType" ColumnName="ClientType" />
+          <ScalarProperty Name="ClientId" ColumnName="ClientId" />
+          <ScalarProperty Name="ProcedureId" ColumnName="ProcedureId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping></edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <edmx:Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </edmx:Connection>
+    <edmx:Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+        <DesignerProperty Name="UseLegacyProvider" Value="False" />
+      </DesignerInfoPropertySet>
+    </edmx:Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

@@ -15,42 +15,42 @@ namespace NoJohns.API.Controllers
 {
     public class ClientsController : ApiController
     {
-        private NoJohnsEntities db = new NoJohnsEntities();
+        private NoJohnsModelContainer db = new NoJohnsModelContainer();
 
         // GET: api/Clients
-        public IQueryable<Client> GetClients()
+        public IQueryable<Clients> GetClientsSet()
         {
-            return db.Clients;
+            return db.ClientsSet;
         }
 
         // GET: api/Clients/5
-        [ResponseType(typeof(Client))]
-        public async Task<IHttpActionResult> GetClient(string id)
+        [ResponseType(typeof(Clients))]
+        public async Task<IHttpActionResult> GetClients(int id)
         {
-            Client client = await db.Clients.FindAsync(id);
-            if (client == null)
+            Clients clients = await db.ClientsSet.FindAsync(id);
+            if (clients == null)
             {
                 return NotFound();
             }
 
-            return Ok(client);
+            return Ok(clients);
         }
 
         // PUT: api/Clients/5
         [ResponseType(typeof(void))]
-        public async Task<IHttpActionResult> PutClient(string id, Client client)
+        public async Task<IHttpActionResult> PutClients(int id, Clients clients)
         {
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
 
-            if (id != client.Id)
+            if (id != clients.Id)
             {
                 return BadRequest();
             }
 
-            db.Entry(client).State = EntityState.Modified;
+            db.Entry(clients).State = EntityState.Modified;
 
             try
             {
@@ -58,7 +58,7 @@ namespace NoJohns.API.Controllers
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!ClientExists(id))
+                if (!ClientsExists(id))
                 {
                     return NotFound();
                 }
@@ -72,49 +72,34 @@ namespace NoJohns.API.Controllers
         }
 
         // POST: api/Clients
-        [ResponseType(typeof(Client))]
-        public async Task<IHttpActionResult> PostClient(Client client)
+        [ResponseType(typeof(Clients))]
+        public async Task<IHttpActionResult> PostClients(Clients clients)
         {
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
 
-            db.Clients.Add(client);
+            db.ClientsSet.Add(clients);
+            await db.SaveChangesAsync();
 
-            try
-            {
-                await db.SaveChangesAsync();
-            }
-            catch (DbUpdateException)
-            {
-                if (ClientExists(client.Id))
-                {
-                    return Conflict();
-                }
-                else
-                {
-                    throw;
-                }
-            }
-
-            return CreatedAtRoute("DefaultApi", new { id = client.Id }, client);
+            return CreatedAtRoute("DefaultApi", new { id = clients.Id }, clients);
         }
 
         // DELETE: api/Clients/5
-        [ResponseType(typeof(Client))]
-        public async Task<IHttpActionResult> DeleteClient(string id)
+        [ResponseType(typeof(Clients))]
+        public async Task<IHttpActionResult> DeleteClients(int id)
         {
-            Client client = await db.Clients.FindAsync(id);
-            if (client == null)
+            Clients clients = await db.ClientsSet.FindAsync(id);
+            if (clients == null)
             {
                 return NotFound();
             }
 
-            db.Clients.Remove(client);
+            db.ClientsSet.Remove(clients);
             await db.SaveChangesAsync();
 
-            return Ok(client);
+            return Ok(clients);
         }
 
         protected override void Dispose(bool disposing)
@@ -126,9 +111,9 @@ namespace NoJohns.API.Controllers
             base.Dispose(disposing);
         }
 
-        private bool ClientExists(string id)
+        private bool ClientsExists(int id)
         {
-            return db.Clients.Count(e => e.Id == id) > 0;
+            return db.ClientsSet.Count(e => e.Id == id) > 0;
         }
     }
 }

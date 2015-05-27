@@ -158,39 +158,43 @@
     <Compile Include="Areas\HelpPage\SampleGeneration\TextSample.cs" />
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
     <Compile Include="Controllers\ClientsController.cs" />
+    <Compile Include="Controllers\ClientsProceduresController.cs" />
+    <Compile Include="Controllers\CommentsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ProceduresController.cs" />
+    <Compile Include="Controllers\TypesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\Client.cs">
-      <DependentUpon>NoJohnsEntities.tt</DependentUpon>
+    <Compile Include="Models\Clients.cs">
+      <DependentUpon>NoJohnsModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\ClientsProcedure.cs">
-      <DependentUpon>NoJohnsEntities.tt</DependentUpon>
+    <Compile Include="Models\ClientsProcedures.cs">
+      <DependentUpon>NoJohnsModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\Comment.cs">
-      <DependentUpon>NoJohnsEntities.tt</DependentUpon>
+    <Compile Include="Models\Comments.cs">
+      <DependentUpon>NoJohnsModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\NoJohnsEntities.Context.cs">
+    <Compile Include="Models\NoJohnsModel.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>NoJohnsEntities.Context.tt</DependentUpon>
+      <DependentUpon>NoJohnsModel.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\NoJohnsEntities.cs">
+    <Compile Include="Models\NoJohnsModel.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>NoJohnsEntities.tt</DependentUpon>
+      <DependentUpon>NoJohnsModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\NoJohnsEntities.Designer.cs">
+    <Compile Include="Models\NoJohnsModel.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>NoJohnsEntities.edmx</DependentUpon>
+      <DependentUpon>NoJohnsModel.edmx</DependentUpon>
     </Compile>
-    <Compile Include="Models\Procedure.cs">
-      <DependentUpon>NoJohnsEntities.tt</DependentUpon>
+    <Compile Include="Models\Procedures.cs">
+      <DependentUpon>NoJohnsModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\ProcedureType.cs">
-      <DependentUpon>NoJohnsEntities.tt</DependentUpon>
+    <Compile Include="Models\Types.cs">
+      <DependentUpon>NoJohnsModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -201,6 +205,7 @@
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
+    <Content Include="Models\NoJohnsModel.edmx.sql" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Areas\HelpPage\Views\Web.config" />
@@ -222,22 +227,22 @@
     <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\CollectionModelDescription.cshtml" />
     <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\ApiGroup.cshtml" />
     <Content Include="Areas\HelpPage\Views\Help\Api.cshtml" />
-    <EntityDeploy Include="Models\NoJohnsEntities.edmx">
+    <EntityDeploy Include="Models\NoJohnsModel.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>NoJohnsEntities.Designer.cs</LastGenOutput>
+      <LastGenOutput>NoJohnsModel.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <Content Include="Models\NoJohnsEntities.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>NoJohnsEntities.edmx</DependentUpon>
-      <LastGenOutput>NoJohnsEntities.Context.cs</LastGenOutput>
+    <Content Include="Models\NoJohnsModel.edmx.diagram">
+      <DependentUpon>NoJohnsModel.edmx</DependentUpon>
     </Content>
-    <Content Include="Models\NoJohnsEntities.edmx.diagram">
-      <DependentUpon>NoJohnsEntities.edmx</DependentUpon>
-    </Content>
-    <Content Include="Models\NoJohnsEntities.tt">
+    <Content Include="Models\NoJohnsModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>NoJohnsEntities.edmx</DependentUpon>
-      <LastGenOutput>NoJohnsEntities.cs</LastGenOutput>
+      <LastGenOutput>NoJohnsModel.Context.cs</LastGenOutput>
+      <DependentUpon>NoJohnsModel.edmx</DependentUpon>
+    </Content>
+    <Content Include="Models\NoJohnsModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>NoJohnsModel.cs</LastGenOutput>
+      <DependentUpon>NoJohnsModel.edmx</DependentUpon>
     </Content>
     <None Include="Properties\PublishProfiles\NoJohns-API.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />

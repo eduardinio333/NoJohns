@@ -4,6 +4,8 @@
     <EntitySetMapping Name="Clients">
       <EntityTypeMapping TypeName="NoJohnsModel.Client">
         <MappingFragment StoreEntitySet="Clients">
+          <ScalarProperty Name="Mail" ColumnName="Mail" />
+          <ScalarProperty Name="User" ColumnName="User" />
           <ScalarProperty Name="Id" ColumnName="Id" />
           <ScalarProperty Name="Password" ColumnName="Password" />
           <ScalarProperty Name="fName" ColumnName="fName" />
@@ -25,6 +27,7 @@
     <EntitySetMapping Name="Comments">
       <EntityTypeMapping TypeName="NoJohnsModel.Comment">
         <MappingFragment StoreEntitySet="Comments">
+          <ScalarProperty Name="Id" ColumnName="Id" />
           <ScalarProperty Name="ClientId" ColumnName="ClientId" />
           <ScalarProperty Name="Comment1" ColumnName="Comment" />
           <ScalarProperty Name="ClientType" ColumnName="ClientType" />

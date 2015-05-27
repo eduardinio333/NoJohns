@@ -1,0 +1,122 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="NoJohnsModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2012.Azure" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="NoJohnsModelStoreContainer">
+    <EntitySet Name="ClientsSet" EntityType="NoJohnsModel.Store.ClientsSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="CommentsSet" EntityType="NoJohnsModel.Store.CommentsSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="TypesSet" EntityType="NoJohnsModel.Store.TypesSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ProceduresSet" EntityType="NoJohnsModel.Store.ProceduresSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ClientsProceduresSet" EntityType="NoJohnsModel.Store.ClientsProceduresSet" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="ClientsComments" Association="NoJohnsModel.Store.ClientsComments">
+      <End Role="Clients" EntitySet="ClientsSet" />
+      <End Role="Comments" EntitySet="CommentsSet" />
+    </AssociationSet>
+    <AssociationSet Name="ProceduresTypes" Association="NoJohnsModel.Store.ProceduresTypes">
+      <End Role="Procedures" EntitySet="ProceduresSet" />
+      <End Role="Types" EntitySet="TypesSet" />
+    </AssociationSet>
+    <AssociationSet Name="ClientsClientsProcedures" Association="NoJohnsModel.Store.ClientsClientsProcedures">
+      <End Role="Clients" EntitySet="ClientsSet" />
+      <End Role="ClientsProcedures" EntitySet="ClientsProceduresSet" />
+    </AssociationSet>
+    <AssociationSet Name="ProceduresClientsProcedures" Association="NoJohnsModel.Store.ProceduresClientsProcedures">
+      <End Role="Procedures" EntitySet="ProceduresSet" />
+      <End Role="ClientsProcedures" EntitySet="ClientsProceduresSet" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="ClientsSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="User" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Password" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Mail" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="fName" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="lName" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Address" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Phone" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CommentsSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ClientId" Type="int" Nullable="false" />
+    <Property Name="Comment" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="ClientType" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TypesSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ProcedureName" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ProceduresSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Description" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="TypesId" Type="int" Nullable="false" />
+    <Property Name="Price" Type="decimal" Nullable="false" />
+    <Property Name="Status" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ClientsProceduresSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ClientType" Type="bit" Nullable="false" />
+    <Property Name="ClientId" Type="int" Nullable="false" />
+    <Property Name="ProcedureId" Type="int" Nullable="false" />
+  </EntityType>
+  <Association Name="ClientsComments">
+    <End Role="Clients" Type="NoJohnsModel.Store.ClientsSet" Multiplicity="1" />
+    <End Role="Comments" Type="NoJohnsModel.Store.CommentsSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Clients">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Comments">
+        <PropertyRef Name="ClientId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="ProceduresTypes">
+    <End Role="Procedures" Type="NoJohnsModel.Store.ProceduresSet" Multiplicity="*" />
+    <End Role="Types" Type="NoJohnsModel.Store.TypesSet" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="Types">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Procedures">
+        <PropertyRef Name="TypesId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="ClientsClientsProcedures">
+    <End Role="Clients" Type="NoJohnsModel.Store.ClientsSet" Multiplicity="1" />
+    <End Role="ClientsProcedures" Type="NoJohnsModel.Store.ClientsProceduresSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Clients">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ClientsProcedures">
+        <PropertyRef Name="ClientId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="ProceduresClientsProcedures">
+    <End Role="Procedures" Type="NoJohnsModel.Store.ProceduresSet" Multiplicity="1" />
+    <End Role="ClientsProcedures" Type="NoJohnsModel.Store.ClientsProceduresSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Procedures">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ClientsProcedures">
+        <PropertyRef Name="ProcedureId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

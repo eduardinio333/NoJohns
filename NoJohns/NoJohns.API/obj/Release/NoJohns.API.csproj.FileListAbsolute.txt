@@ -33,3 +33,41 @@ c:\Users\eduardo\Documents\Visual Studio 2013\Projects\NoJohns\NoJohns.API\bin\S
 c:\Users\eduardo\Documents\Visual Studio 2013\Projects\NoJohns\NoJohns.API\bin\Antlr3.Runtime.pdb
 c:\Users\eduardo\Documents\Visual Studio 2013\Projects\NoJohns\NoJohns.API\obj\Release\NoJohns.API.dll
 c:\Users\eduardo\Documents\Visual Studio 2013\Projects\NoJohns\NoJohns.API\obj\Release\NoJohns.API.pdb
+C:\NoJohns\NoJohns\NoJohns.API\bin\NoJohns.API.dll.config
+C:\NoJohns\NoJohns\NoJohns.API\bin\NoJohns.API.dll
+C:\NoJohns\NoJohns\NoJohns.API\bin\NoJohns.API.pdb
+C:\NoJohns\NoJohns\NoJohns.API\bin\Antlr3.Runtime.dll
+C:\NoJohns\NoJohns\NoJohns.API\bin\EntityFramework.dll
+C:\NoJohns\NoJohns\NoJohns.API\bin\EntityFramework.SqlServer.dll
+C:\NoJohns\NoJohns\NoJohns.API\bin\Microsoft.Web.Infrastructure.dll
+C:\NoJohns\NoJohns\NoJohns.API\bin\Newtonsoft.Json.dll
+C:\NoJohns\NoJohns\NoJohns.API\bin\RestSharp.dll
+C:\NoJohns\NoJohns\NoJohns.API\bin\System.Net.Http.Formatting.dll
+C:\NoJohns\NoJohns\NoJohns.API\bin\System.Web.Helpers.dll
+C:\NoJohns\NoJohns\NoJohns.API\bin\System.Web.Http.dll
+C:\NoJohns\NoJohns\NoJohns.API\bin\System.Web.Http.WebHost.dll
+C:\NoJohns\NoJohns\NoJohns.API\bin\System.Web.Mvc.dll
+C:\NoJohns\NoJohns\NoJohns.API\bin\System.Web.Optimization.dll
+C:\NoJohns\NoJohns\NoJohns.API\bin\System.Web.Razor.dll
+C:\NoJohns\NoJohns\NoJohns.API\bin\System.Web.WebPages.Deployment.dll
+C:\NoJohns\NoJohns\NoJohns.API\bin\System.Web.WebPages.dll
+C:\NoJohns\NoJohns\NoJohns.API\bin\System.Web.WebPages.Razor.dll
+C:\NoJohns\NoJohns\NoJohns.API\bin\WebGrease.dll
+C:\NoJohns\NoJohns\NoJohns.API\bin\EntityFramework.xml
+C:\NoJohns\NoJohns\NoJohns.API\bin\EntityFramework.SqlServer.xml
+C:\NoJohns\NoJohns\NoJohns.API\bin\RestSharp.xml
+C:\NoJohns\NoJohns\NoJohns.API\bin\Newtonsoft.Json.xml
+C:\NoJohns\NoJohns\NoJohns.API\bin\System.Net.Http.Formatting.xml
+C:\NoJohns\NoJohns\NoJohns.API\bin\System.Web.Helpers.xml
+C:\NoJohns\NoJohns\NoJohns.API\bin\System.Web.Http.xml
+C:\NoJohns\NoJohns\NoJohns.API\bin\System.Web.Http.WebHost.xml
+C:\NoJohns\NoJohns\NoJohns.API\bin\System.Web.Mvc.xml
+C:\NoJohns\NoJohns\NoJohns.API\bin\System.Web.Optimization.xml
+C:\NoJohns\NoJohns\NoJohns.API\bin\System.Web.Razor.xml
+C:\NoJohns\NoJohns\NoJohns.API\bin\System.Web.WebPages.xml
+C:\NoJohns\NoJohns\NoJohns.API\bin\System.Web.WebPages.Deployment.xml
+C:\NoJohns\NoJohns\NoJohns.API\bin\System.Web.WebPages.Razor.xml
+C:\NoJohns\NoJohns\NoJohns.API\bin\Antlr3.Runtime.pdb
+C:\NoJohns\NoJohns\NoJohns.API\obj\Release\NoJohns.API.csprojResolveAssemblyReference.cache
+C:\NoJohns\NoJohns\NoJohns.API\obj\Release\NoJohns.API.dll
+C:\NoJohns\NoJohns\NoJohns.API\obj\Release\NoJohns.API.pdb
