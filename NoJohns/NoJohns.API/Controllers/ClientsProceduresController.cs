@@ -35,6 +35,17 @@ namespace NoJohns.API.Controllers
 
             return Ok(clientsProcedures);
         }
+        [Route("api/ClientsProcedures/Client/{ClientId}")]
+        public dynamic GetProcedureByClient(int ClientId)
+        {
+            ClientsProcedures customer = db.ClientsProceduresSet.Find(ClientId );
+            if (customer == null)
+            {
+                return NotFound();
+            }
+
+            return Ok(customer);
+        }
 
         // PUT: api/ClientsProcedures/5
         [ResponseType(typeof(void))]

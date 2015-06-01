@@ -10,13 +10,16 @@ using System.Threading.Tasks;
 using System.Web.Http;
 using System.Web.Http.Description;
 using NoJohns.API.Models;
+using System.Linq.Expressions;
+using NoJohns.API.Models.Requests;
 
 namespace NoJohns.API.Controllers
 {
+    [RoutePrefix("api/Comments")]
+    
     public class CommentsController : ApiController
     {
         private NoJohnsModelContainer db = new NoJohnsModelContainer();
-
         // GET: api/Comments
         public IQueryable<Comments> GetCommentsSet()
         {
@@ -25,15 +28,30 @@ namespace NoJohns.API.Controllers
 
         // GET: api/Comments/5
         [ResponseType(typeof(Comments))]
-        public async Task<IHttpActionResult> GetComments(int id)
+        public async Task<IHttpActionResult> GetCommentsByClient([FromBody]int ClientId)
         {
-            Comments comments = await db.CommentsSet.FindAsync(id);
+            Comments comments = await db.CommentsSet.FindAsync(ClientId);
             if (comments == null)
             {
                 return NotFound();
             }
 
             return Ok(comments);
+        }
+
+        public async Task<IHttpActionResult> GetComments(string request)
+        {
+            var oRequest = BaseRequest.ToRequest<CommentRequest>(request);
+            IEnumerable<Comments> clients = db.CommentsSet.AsEnumerable();
+
+            clients = oRequest.FilterRequest(clients);
+
+            if (clients == null)
+            {
+                return NotFound();
+            }
+
+            return Ok(clients);
         }
 
         // PUT: api/Comments/5

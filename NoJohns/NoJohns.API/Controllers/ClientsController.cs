@@ -10,9 +10,11 @@ using System.Threading.Tasks;
 using System.Web.Http;
 using System.Web.Http.Description;
 using NoJohns.API.Models;
+using NoJohns.API.Models.Requests;
 
 namespace NoJohns.API.Controllers
 {
+    [RoutePrefix("api/Clients")]
     public class ClientsController : ApiController
     {
         private NoJohnsModelContainer db = new NoJohnsModelContainer();
@@ -23,11 +25,28 @@ namespace NoJohns.API.Controllers
             return db.ClientsSet;
         }
 
+        // GET: api/Clients/{Username}
         // GET: api/Clients/5
         [ResponseType(typeof(Clients))]
         public async Task<IHttpActionResult> GetClients(int id)
         {
             Clients clients = await db.ClientsSet.FindAsync(id);
+            if (clients == null)
+            {
+                return NotFound();
+            }
+
+            return Ok(clients);
+        }
+
+        [ResponseType(typeof(Clients))]
+        public async Task<IHttpActionResult> GetClients(string request)
+        {
+            var oRequest = BaseRequest.ToRequest<ClientRequest>(request);
+            IEnumerable<Clients> clients = db.ClientsSet.AsEnumerable();
+
+            clients = oRequest.FilterRequest(clients);
+
             if (clients == null)
             {
                 return NotFound();

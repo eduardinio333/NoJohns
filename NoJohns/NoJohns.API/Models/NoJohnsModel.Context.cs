@@ -12,6 +12,8 @@ namespace NoJohns.API.Models
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
+    using System.Data.Entity.Core.Objects;
+    using System.Linq;
     
     public partial class NoJohnsModelContainer : DbContext
     {
@@ -30,5 +32,23 @@ namespace NoJohns.API.Models
         public virtual DbSet<Types> TypesSet { get; set; }
         public virtual DbSet<Procedures> ProceduresSet { get; set; }
         public virtual DbSet<ClientsProcedures> ClientsProceduresSet { get; set; }
+    
+        public virtual int Search_Username(string usuario_In, ObjectParameter id)
+        {
+            var usuario_InParameter = usuario_In != null ?
+                new ObjectParameter("Usuario_In", usuario_In) :
+                new ObjectParameter("Usuario_In", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("Search_Username", usuario_InParameter, id);
+        }
+    
+        public virtual ObjectResult<Nullable<int>> GetByUsername(string usuario_In, ObjectParameter id)
+        {
+            var usuario_InParameter = usuario_In != null ?
+                new ObjectParameter("Usuario_In", usuario_In) :
+                new ObjectParameter("Usuario_In", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Nullable<int>>("GetByUsername", usuario_InParameter, id);
+        }
     }
 }

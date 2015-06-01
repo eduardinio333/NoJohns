@@ -194,6 +194,9 @@
     <Compile Include="Models\Procedures.cs">
       <DependentUpon>NoJohnsModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\Requests\ClientRequest.cs" />
+    <Compile Include="Models\Requests\BaseRequest.cs" />
+    <Compile Include="Models\Requests\CommentRequest.cs" />
     <Compile Include="Models\Types.cs">
       <DependentUpon>NoJohnsModel.tt</DependentUpon>
     </Compile>

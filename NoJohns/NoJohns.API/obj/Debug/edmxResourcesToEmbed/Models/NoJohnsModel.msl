@@ -54,5 +54,7 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="Search_Username" FunctionName="NoJohnsModel.Store.Search_Username" />
+    <FunctionImportMapping FunctionImportName="GetByUsername" FunctionName="NoJohnsModel.Store.Search_Username" />
   </EntityContainerMapping>
 </Mapping>

@@ -69,6 +69,6 @@ C:\NoJohns\NoJohns\NoJohns.API\bin\System.Web.WebPages.xml
 C:\NoJohns\NoJohns\NoJohns.API\bin\System.Web.WebPages.Deployment.xml
 C:\NoJohns\NoJohns\NoJohns.API\bin\System.Web.WebPages.Razor.xml
 C:\NoJohns\NoJohns\NoJohns.API\bin\Antlr3.Runtime.pdb
+C:\NoJohns\NoJohns\NoJohns.API\obj\Debug\NoJohns.API.csprojResolveAssemblyReference.cache
 C:\NoJohns\NoJohns\NoJohns.API\obj\Debug\NoJohns.API.dll
 C:\NoJohns\NoJohns\NoJohns.API\obj\Debug\NoJohns.API.pdb
-C:\NoJohns\NoJohns\NoJohns.API\obj\Debug\NoJohns.API.csprojResolveAssemblyReference.cache
