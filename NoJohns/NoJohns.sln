@@ -5,6 +5,8 @@ VisualStudioVersion = 12.0.31101.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NoJohns.API", "NoJohns.API\NoJohns.API.csproj", "{91CC9234-ECF5-4C10-94E2-8C9D2BF10C5A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NoJohns.Models", "NoJohns.Models\NoJohns.Models.csproj", "{EF92B8A8-D0DD-4C79-8745-5F743171BBC4}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{91CC9234-ECF5-4C10-94E2-8C9D2BF10C5A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{91CC9234-ECF5-4C10-94E2-8C9D2BF10C5A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{91CC9234-ECF5-4C10-94E2-8C9D2BF10C5A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EF92B8A8-D0DD-4C79-8745-5F743171BBC4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EF92B8A8-D0DD-4C79-8745-5F743171BBC4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EF92B8A8-D0DD-4C79-8745-5F743171BBC4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EF92B8A8-D0DD-4C79-8745-5F743171BBC4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -96,6 +96,10 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Function Name="Search_Username" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Usuario_In" Type="varchar" Mode="In" />
+    <Parameter Name="Id" Type="int" Mode="InOut" />
+  </Function>
   <EntityContainer Name="NoJohnsModelStoreContainer">
     <EntitySet Name="ClientsProceduresSet" EntityType="Self.ClientsProceduresSet" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="ClientsSet" EntityType="Self.ClientsSet" Schema="dbo" store:Type="Tables" />

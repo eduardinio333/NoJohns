@@ -22,6 +22,14 @@
       <End Role="Procedures" EntitySet="ProceduresSet" />
       <End Role="ClientsProcedures" EntitySet="ClientsProceduresSet" />
     </AssociationSet>
+    <FunctionImport Name="Search_Username">
+      <Parameter Name="Usuario_In" Mode="In" Type="String" />
+      <Parameter Name="Id" Mode="InOut" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="GetByUsername" ReturnType="Collection(Int32)">
+      <Parameter Name="Usuario_In" Mode="In" Type="String" />
+      <Parameter Name="Id" Mode="InOut" Type="Int32" />
+    </FunctionImport>
   </EntityContainer>
   <EntityType Name="Clients">
     <Key>
