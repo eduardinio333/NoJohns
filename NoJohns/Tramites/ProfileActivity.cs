@@ -18,7 +18,7 @@ namespace Tramites
 	public class Profile : Activity
 	{
 		public class jsonProfile{
-			public string User { get;set;}
+			public string Username { get;set;}
 			public string Password { get; set;}
 			public string Mail{ get; set;}
 			public string fName{ get; set;}
@@ -42,8 +42,9 @@ namespace Tramites
 
 			var client= new RestClient ("http://nojohns-api.azurewebsites.net/");
 			var request= new RestRequest("api/clients/1",Method.GET);
+
 			request.RequestFormat = DataFormat.Json; 
-			var response = client.Execute<jsonProfile> (request);
+			var response = client.Execute<jsonProfile>(request);
 			plName.Text = response.Data.fName +" " + response.Data.lName;
 			pAddress.Text = response.Data.Address;
 			pPhone.Text = response.Data.Phone;
