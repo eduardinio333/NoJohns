@@ -1,0 +1,126 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="NoJohnsModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012.Azure" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="ClientsProceduresSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ClientType" Type="bit" Nullable="false" />
+    <Property Name="ClientId" Type="int" Nullable="false" />
+    <Property Name="ProcedureId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ClientsSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Username" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Password" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Mail" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="fName" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="lName" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Address" Type="nvarchar(max)" />
+    <Property Name="Phone" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CommentsSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ClientId" Type="int" Nullable="false" />
+    <Property Name="Comment" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="ClientType" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ProceduresSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Description" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="TypesId" Type="int" Nullable="false" />
+    <Property Name="Price" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="Status" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TypesSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ProcedureName" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_ClientsClientsProcedures">
+    <End Role="ClientsSet" Type="Self.ClientsSet" Multiplicity="1" />
+    <End Role="ClientsProceduresSet" Type="Self.ClientsProceduresSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ClientsSet">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ClientsProceduresSet">
+        <PropertyRef Name="ClientId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ClientsComments">
+    <End Role="ClientsSet" Type="Self.ClientsSet" Multiplicity="1" />
+    <End Role="CommentsSet" Type="Self.CommentsSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ClientsSet">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="CommentsSet">
+        <PropertyRef Name="ClientId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ProceduresClientsProcedures">
+    <End Role="ProceduresSet" Type="Self.ProceduresSet" Multiplicity="1" />
+    <End Role="ClientsProceduresSet" Type="Self.ClientsProceduresSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ProceduresSet">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ClientsProceduresSet">
+        <PropertyRef Name="ProcedureId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ProceduresTypes">
+    <End Role="TypesSet" Type="Self.TypesSet" Multiplicity="1" />
+    <End Role="ProceduresSet" Type="Self.ProceduresSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TypesSet">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ProceduresSet">
+        <PropertyRef Name="TypesId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Function Name="Search_Username" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Usuario_In" Type="varchar" Mode="In" />
+    <Parameter Name="Id" Type="int" Mode="InOut" />
+  </Function>
+  <EntityContainer Name="NoJohnsModelStoreContainer">
+    <EntitySet Name="ClientsProceduresSet" EntityType="Self.ClientsProceduresSet" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ClientsSet" EntityType="Self.ClientsSet" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CommentsSet" EntityType="Self.CommentsSet" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ProceduresSet" EntityType="Self.ProceduresSet" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TypesSet" EntityType="Self.TypesSet" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_ClientsClientsProcedures" Association="Self.FK_ClientsClientsProcedures">
+      <End Role="ClientsSet" EntitySet="ClientsSet" />
+      <End Role="ClientsProceduresSet" EntitySet="ClientsProceduresSet" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ClientsComments" Association="Self.FK_ClientsComments">
+      <End Role="ClientsSet" EntitySet="ClientsSet" />
+      <End Role="CommentsSet" EntitySet="CommentsSet" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ProceduresClientsProcedures" Association="Self.FK_ProceduresClientsProcedures">
+      <End Role="ProceduresSet" EntitySet="ProceduresSet" />
+      <End Role="ClientsProceduresSet" EntitySet="ClientsProceduresSet" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ProceduresTypes" Association="Self.FK_ProceduresTypes">
+      <End Role="TypesSet" EntitySet="TypesSet" />
+      <End Role="ProceduresSet" EntitySet="ProceduresSet" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

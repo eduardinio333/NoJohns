@@ -1,0 +1,12 @@
+C:\NoJohns\NoJohns\NoJohns.Models\obj\Debug\NoJohns.Models.csprojResolveAssemblyReference.cache
+C:\NoJohns\NoJohns\NoJohns.Models\bin\Debug\NoJohns.Models.dll.config
+C:\NoJohns\NoJohns\NoJohns.Models\bin\Debug\NoJohns.Models.dll
+C:\NoJohns\NoJohns\NoJohns.Models\bin\Debug\NoJohns.Models.pdb
+C:\NoJohns\NoJohns\NoJohns.Models\bin\Debug\EntityFramework.dll
+C:\NoJohns\NoJohns\NoJohns.Models\bin\Debug\EntityFramework.SqlServer.dll
+C:\NoJohns\NoJohns\NoJohns.Models\bin\Debug\Newtonsoft.Json.dll
+C:\NoJohns\NoJohns\NoJohns.Models\bin\Debug\EntityFramework.xml
+C:\NoJohns\NoJohns\NoJohns.Models\bin\Debug\EntityFramework.SqlServer.xml
+C:\NoJohns\NoJohns\NoJohns.Models\bin\Debug\Newtonsoft.Json.xml
+C:\NoJohns\NoJohns\NoJohns.Models\obj\Debug\NoJohns.Models.dll
+C:\NoJohns\NoJohns\NoJohns.Models\obj\Debug\NoJohns.Models.pdb
