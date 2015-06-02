@@ -39,7 +39,8 @@ namespace NoJohns.API.Controllers
 
             return Ok(comments);
         }
-
+        [Route("filter/{request}")]
+        [ResponseType(typeof(Comments))]
         public async Task<IHttpActionResult> GetComments(string request)
         {
             var oRequest = BaseRequest.ToRequest<CommentRequest>(request);

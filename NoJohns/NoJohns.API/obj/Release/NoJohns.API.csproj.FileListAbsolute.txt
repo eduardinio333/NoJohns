@@ -71,3 +71,5 @@ C:\NoJohns\NoJohns\NoJohns.API\bin\Antlr3.Runtime.pdb
 C:\NoJohns\NoJohns\NoJohns.API\obj\Release\NoJohns.API.csprojResolveAssemblyReference.cache
 C:\NoJohns\NoJohns\NoJohns.API\obj\Release\NoJohns.API.dll
 C:\NoJohns\NoJohns\NoJohns.API\obj\Release\NoJohns.API.pdb
+C:\NoJohns\NoJohns\NoJohns.API\bin\NoJohns.Portable.dll
+C:\NoJohns\NoJohns\NoJohns.API\bin\NoJohns.Portable.pdb
