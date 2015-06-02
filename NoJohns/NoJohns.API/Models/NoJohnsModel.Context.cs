@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace NoJohns.API.Models
+namespace NoJohns.Portable
 {
     using System;
     using System.Data.Entity;

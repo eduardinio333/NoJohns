@@ -5,14 +5,14 @@ namespace NoJohns.API.Migrations
     using System.Data.Entity.Migrations;
     using System.Linq;
 
-    internal sealed class Configuration : DbMigrationsConfiguration<NoJohns.API.Models.NoJohnsModelContainer>
+    internal sealed class Configuration : DbMigrationsConfiguration<NoJohns.Portable.NoJohnsModelContainer>
     {
         public Configuration()
         {
             AutomaticMigrationsEnabled = false;
         }
 
-        protected override void Seed(NoJohns.API.Models.NoJohnsModelContainer context)
+        protected override void Seed(NoJohns.Portable.NoJohnsModelContainer context)
         {
             //  This method will be called after migrating to the latest version.
 

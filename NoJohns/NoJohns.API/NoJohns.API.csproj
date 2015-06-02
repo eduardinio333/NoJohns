@@ -167,39 +167,19 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
-    <Compile Include="Models\Clients.cs">
-      <DependentUpon>NoJohnsModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\ClientsProcedures.cs">
-      <DependentUpon>NoJohnsModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Comments.cs">
-      <DependentUpon>NoJohnsModel.tt</DependentUpon>
-    </Compile>
     <Compile Include="Models\NoJohnsModel.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>NoJohnsModel.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\NoJohnsModel.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>NoJohnsModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\NoJohnsModel.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>NoJohnsModel.edmx</DependentUpon>
     </Compile>
-    <Compile Include="Models\Procedures.cs">
-      <DependentUpon>NoJohnsModel.tt</DependentUpon>
-    </Compile>
     <Compile Include="Models\Requests\ClientRequest.cs" />
     <Compile Include="Models\Requests\BaseRequest.cs" />
     <Compile Include="Models\Requests\CommentRequest.cs" />
-    <Compile Include="Models\Types.cs">
-      <DependentUpon>NoJohnsModel.tt</DependentUpon>
-    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -234,6 +214,7 @@
     <EntityDeploy Include="Models\NoJohnsModel.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>NoJohnsModel.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>NoJohns.Portable</CustomToolNamespace>
     </EntityDeploy>
     <Content Include="Models\NoJohnsModel.edmx.diagram">
       <DependentUpon>NoJohnsModel.edmx</DependentUpon>
@@ -242,11 +223,7 @@
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>NoJohnsModel.Context.cs</LastGenOutput>
       <DependentUpon>NoJohnsModel.edmx</DependentUpon>
-    </Content>
-    <Content Include="Models\NoJohnsModel.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>NoJohnsModel.cs</LastGenOutput>
-      <DependentUpon>NoJohnsModel.edmx</DependentUpon>
+      <CustomToolNamespace>NoJohns.Portable</CustomToolNamespace>
     </Content>
     <None Include="Properties\PublishProfiles\NoJohns-API.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
@@ -283,9 +260,9 @@
     <None Include="Project_Readme.html" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\NoJohns.Models\NoJohns.Models.csproj">
-      <Project>{ef92b8a8-d0dd-4c79-8745-5f743171bbc4}</Project>
-      <Name>NoJohns.Models</Name>
+    <ProjectReference Include="..\NoJohns.Portable\NoJohns.Portable.csproj">
+      <Project>{e6ff0ce8-f218-459d-8fca-733ed5545d2b}</Project>
+      <Name>NoJohns.Portable</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

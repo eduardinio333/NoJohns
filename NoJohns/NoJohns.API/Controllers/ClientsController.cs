@@ -11,6 +11,7 @@ using System.Web.Http;
 using System.Web.Http.Description;
 using NoJohns.API.Models;
 using NoJohns.API.Models.Requests;
+using NoJohns.Portable;
 
 namespace NoJohns.API.Controllers
 {

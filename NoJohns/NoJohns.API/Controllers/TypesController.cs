@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using System.Web.Http;
 using System.Web.Http.Description;
 using NoJohns.API.Models;
+using NoJohns.Portable;
 
 namespace NoJohns.API.Controllers
 {

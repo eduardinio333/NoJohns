@@ -42,6 +42,7 @@ C:\NoJohns\NoJohns\NoJohns.API\bin\EntityFramework.dll
 C:\NoJohns\NoJohns\NoJohns.API\bin\EntityFramework.SqlServer.dll
 C:\NoJohns\NoJohns\NoJohns.API\bin\Microsoft.Web.Infrastructure.dll
 C:\NoJohns\NoJohns\NoJohns.API\bin\Newtonsoft.Json.dll
+C:\NoJohns\NoJohns\NoJohns.API\bin\NoJohns.Portable.dll
 C:\NoJohns\NoJohns\NoJohns.API\bin\RestSharp.dll
 C:\NoJohns\NoJohns\NoJohns.API\bin\System.Net.Http.Formatting.dll
 C:\NoJohns\NoJohns\NoJohns.API\bin\System.Web.Helpers.dll
@@ -54,6 +55,7 @@ C:\NoJohns\NoJohns\NoJohns.API\bin\System.Web.WebPages.Deployment.dll
 C:\NoJohns\NoJohns\NoJohns.API\bin\System.Web.WebPages.dll
 C:\NoJohns\NoJohns\NoJohns.API\bin\System.Web.WebPages.Razor.dll
 C:\NoJohns\NoJohns\NoJohns.API\bin\WebGrease.dll
+C:\NoJohns\NoJohns\NoJohns.API\bin\NoJohns.Portable.pdb
 C:\NoJohns\NoJohns\NoJohns.API\bin\EntityFramework.xml
 C:\NoJohns\NoJohns\NoJohns.API\bin\EntityFramework.SqlServer.xml
 C:\NoJohns\NoJohns\NoJohns.API\bin\RestSharp.xml
@@ -72,5 +74,3 @@ C:\NoJohns\NoJohns\NoJohns.API\bin\Antlr3.Runtime.pdb
 C:\NoJohns\NoJohns\NoJohns.API\obj\Debug\NoJohns.API.csprojResolveAssemblyReference.cache
 C:\NoJohns\NoJohns\NoJohns.API\obj\Debug\NoJohns.API.dll
 C:\NoJohns\NoJohns\NoJohns.API\obj\Debug\NoJohns.API.pdb
-C:\NoJohns\NoJohns\NoJohns.API\bin\NoJohns.Models.dll
-C:\NoJohns\NoJohns\NoJohns.API\bin\NoJohns.Models.pdb

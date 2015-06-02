@@ -12,6 +12,7 @@ using System.Web.Http.Description;
 using NoJohns.API.Models;
 using System.Linq.Expressions;
 using NoJohns.API.Models.Requests;
+using NoJohns.Portable;
 
 namespace NoJohns.API.Controllers
 {
