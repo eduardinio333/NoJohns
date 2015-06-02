@@ -12,7 +12,7 @@ namespace NoJohns.Portable
     using System;
     using System.Collections.Generic;
     
-    public partial class Comments
+    public class Comments
     {
         public int Id { get; set; }
         public int ClientId { get; set; }

@@ -12,7 +12,7 @@ namespace NoJohns.Portable
     using System;
     using System.Collections.Generic;
     
-    public partial class Procedures
+    public class Procedures
     {
         public Procedures()
         {
@@ -24,7 +24,7 @@ namespace NoJohns.Portable
         public int TypesId { get; set; }
         public decimal Price { get; set; }
         public string Status { get; set; }
-    
+
         public virtual Types Types { get; set; }
         public virtual ICollection<ClientsProcedures> ClientsProcedures { get; set; }
     }

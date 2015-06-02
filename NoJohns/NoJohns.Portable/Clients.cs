@@ -12,7 +12,7 @@ namespace NoJohns.Portable
     using System;
     using System.Collections.Generic;
     
-    public partial class Clients
+    public class Clients
     {
         public Clients()
         {
@@ -28,7 +28,7 @@ namespace NoJohns.Portable
         public string lName { get; set; }
         public string Address { get; set; }
         public string Phone { get; set; }
-    
+
         public virtual ICollection<Comments> Comments { get; set; }
         public virtual ICollection<ClientsProcedures> ClientsProcedures { get; set; }
     }

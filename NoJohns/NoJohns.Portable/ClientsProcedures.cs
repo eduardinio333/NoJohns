@@ -12,13 +12,13 @@ namespace NoJohns.Portable
     using System;
     using System.Collections.Generic;
     
-    public partial class ClientsProcedures
+    public class ClientsProcedures
     {
         public int Id { get; set; }
         public bool ClientType { get; set; }
         public int ClientId { get; set; }
         public int ProcedureId { get; set; }
-    
+
         public virtual Clients Clients { get; set; }
         public virtual Procedures Procedures { get; set; }
     }

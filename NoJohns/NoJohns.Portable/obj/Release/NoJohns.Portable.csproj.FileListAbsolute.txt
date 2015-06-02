@@ -1,0 +1,6 @@
+C:\NoJohns\NoJohns\NoJohns.Portable\bin\Release\NoJohns.Portable.dll
+C:\NoJohns\NoJohns\NoJohns.Portable\bin\Release\NoJohns.Portable.pdb
+C:\NoJohns\NoJohns\NoJohns.Portable\bin\Release\Newtonsoft.Json.dll
+C:\NoJohns\NoJohns\NoJohns.Portable\bin\Release\Newtonsoft.Json.xml
+C:\NoJohns\NoJohns\NoJohns.Portable\obj\Release\NoJohns.Portable.dll
+C:\NoJohns\NoJohns\NoJohns.Portable\obj\Release\NoJohns.Portable.pdb
