@@ -6,7 +6,15 @@ Tramites.Profile, Tramites;md5ed13aa5df9f0900ecb179369c4b60a16.Profile
 Tramites.Profile, Tramites, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null;md5ed13aa5df9f0900ecb179369c4b60a16.Profile
 Tramites.Profile;md5ed13aa5df9f0900ecb179369c4b60a16.Profile
 tramites.Profile;md5ed13aa5df9f0900ecb179369c4b60a16.Profile
+Tramites.CommentsActivity, Tramites;md5ed13aa5df9f0900ecb179369c4b60a16.CommentsActivity
+Tramites.CommentsActivity, Tramites, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null;md5ed13aa5df9f0900ecb179369c4b60a16.CommentsActivity
+Tramites.CommentsActivity;md5ed13aa5df9f0900ecb179369c4b60a16.CommentsActivity
+tramites.CommentsActivity;md5ed13aa5df9f0900ecb179369c4b60a16.CommentsActivity
 Tramites.SignUpActivity, Tramites;md5ed13aa5df9f0900ecb179369c4b60a16.SignUpActivity
 Tramites.SignUpActivity, Tramites, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null;md5ed13aa5df9f0900ecb179369c4b60a16.SignUpActivity
 Tramites.SignUpActivity;md5ed13aa5df9f0900ecb179369c4b60a16.SignUpActivity
 tramites.SignUpActivity;md5ed13aa5df9f0900ecb179369c4b60a16.SignUpActivity
+Tramites.Dialog_EditProfile, Tramites;md5ed13aa5df9f0900ecb179369c4b60a16.Dialog_EditProfile
+Tramites.Dialog_EditProfile, Tramites, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null;md5ed13aa5df9f0900ecb179369c4b60a16.Dialog_EditProfile
+Tramites.Dialog_EditProfile;md5ed13aa5df9f0900ecb179369c4b60a16.Dialog_EditProfile
+tramites.Dialog_EditProfile;md5ed13aa5df9f0900ecb179369c4b60a16.Dialog_EditProfile
