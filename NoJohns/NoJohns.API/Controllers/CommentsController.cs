@@ -40,7 +40,7 @@ namespace NoJohns.API.Controllers
             return Ok(comments);
         }
         [Route("filter/{request}")]
-        [ResponseType(typeof(Comments))]
+        [ResponseType(typeof(List<Comments>))]
         public async Task<IHttpActionResult> GetComments(string request)
         {
             var oRequest = BaseRequest.ToRequest<CommentRequest>(request);
@@ -53,7 +53,7 @@ namespace NoJohns.API.Controllers
                 return NotFound();
             }
 
-            return Ok(clients);
+            return Ok(clients.ToList());
         }
 
         // PUT: api/Comments/5
