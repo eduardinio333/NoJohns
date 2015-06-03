@@ -2,4 +2,6 @@
 <resources>
 	<string name="hello">Hello World, Click Me!</string>
 	<string name="app_name">Tramites</string>
+	<string name="action_search">search_title </string>
+	<string name="action_compose"> compose_title </string>
 </resources>

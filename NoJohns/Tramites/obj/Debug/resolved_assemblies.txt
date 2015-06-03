@@ -1,4 +1,4 @@
 C:\NoJonhs\NoJohns\NoJohns\Tramites\bin\Debug\Tramites.dll
+C:\NoJonhs\NoJohns\NoJohns\Tramites\packages\Newtonsoft.Json.6.0.8\lib\portable-net40+sl5+wp80+win8+wpa81\Newtonsoft.Json.dll
 C:\NoJonhs\NoJohns\NoJohns\NoJohns.Portable\bin\Debug\NoJohns.Portable.dll
 C:\NoJonhs\NoJohns\NoJohns\Tramites\Components\restsharp-105.0.1.0\lib\android\RestSharp.MonoDroid.dll
-C:\NoJonhs\NoJohns\NoJohns\Tramites\bin\Debug\Newtonsoft.Json.dll
