@@ -9,6 +9,7 @@ using Android.OS;
 using RestSharp;
 using NoJohns.Portable;
 using System.Collections.Generic;
+using Newtonsoft.Json;
 
 namespace Tramites
 {
@@ -16,16 +17,6 @@ namespace Tramites
 	[Activity (Label = "Tramites", MainLauncher = true, Icon = "@drawable/logo")]
 	public class MainActivity : Activity
 	{
-		public class jsonProfile{
-			public int Id { get; set; }
-			public string Username { get;set;}
-			public string Password { get; set;}
-			public string Mail{ get; set;}
-			public string fName{ get; set;}
-			public string lName{ get; set;}
-			public string Address{ get; set;}
-			public string Phone{ get; set;}
-		}
 		protected override void OnCreate (Bundle bundle)
 		{
 			
@@ -49,12 +40,14 @@ namespace Tramites
 				var request = new NoJohns.Portable.Requests.ClientRequest {Username=user.Text};
 				var request1= new RestRequest("api/clients/filter/"+request.ToRequestString(),Method.GET);
 				request1.RequestFormat = DataFormat.Json; 
-				var response = client.Execute<List<jsonProfile>>(request1);
+				var response = client.Execute<List<Clients>>(request1);
+				var desResponse = JsonConvert.DeserializeObject<List<Clients>>(response.Content);
+
 				try {
-					if (user.Text==response.Data[0].Username && pass.Text==response.Data[0].Password)
+					if (user.Text==desResponse[0].Username && pass.Text==desResponse[0].Password)
 					{
 						var intent = new Intent(this, typeof(Profile));
-						intent.PutExtra("id",response.Data[0].Id);
+						intent.PutExtra("id",desResponse[0].Id);
 						StartActivity(intent);
 						//Finish();
 						}

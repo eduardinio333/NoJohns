@@ -50,6 +50,9 @@
     <Reference Include="NoJohns.Portable">
       <HintPath>..\NoJohns.Portable\bin\Debug\NoJohns.Portable.dll</HintPath>
     </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>packages\Newtonsoft.Json.6.0.8\lib\portable-net40+sl5+wp80+win8+wpa81\Newtonsoft.Json.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="MainActivity.cs" />
@@ -174,6 +177,8 @@
     <None Include="packages\Xamarin.UITest.0.7.1\Xamarin.UITest.0.7.1.nupkg" />
     <None Include="packages\Xamarin.UITest.0.7.1\Xamarin.UITest-License.rtf" />
     <None Include="packages\repositories.config" />
+    <None Include="ProfileActivityActionBar.xml" />
+    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\layout\Main.axml" />

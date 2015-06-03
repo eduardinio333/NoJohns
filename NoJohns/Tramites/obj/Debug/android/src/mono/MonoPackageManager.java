@@ -80,9 +80,9 @@ public class MonoPackageManager {
 class MonoPackageManager_Resources {
 	public static final String[] Assemblies = new String[]{
 		"Tramites.dll",
+		"Newtonsoft.Json.dll",
 		"NoJohns.Portable.dll",
 		"RestSharp.MonoDroid.dll",
-		"Newtonsoft.Json.dll",
 	};
 	public static final String[] Dependencies = new String[]{
 	};
