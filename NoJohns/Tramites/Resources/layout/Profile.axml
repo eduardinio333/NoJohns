@@ -1,4 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+    <item android:id="@+id/action_search"
+          android:icon="@drawable/ic_action_search"
+          android:title="@string/action_search"/>
+    <item android:id="@+id/action_compose"
+          android:icon="@drawable/ic_action_compose"
+          android:title="@string/action_compose" />
+</menu>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
@@ -12,18 +20,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textColor="#ff63b4fb"
-            android:id="@+id/plName"
-            android:text="apellido" />
-        <ImageView
-            android:src="@android:drawable/ic_menu_directions"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="30px"
-            android:layout_marginTop="30px"
-            android:layout_below="@id/plName"
-            android:id="@+id/AddresIcon" />
+            android:id="@+id/plName" />
         <TextView
-            android:text="Address"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:layout_width="match_parent"
             android:layout_marginLeft="20px"
@@ -32,16 +30,8 @@
             android:layout_marginTop="30px"
             android:layout_below="@id/plName"
             android:id="@+id/pAddress"
-            android:layout_toRightOf="@id/AddresIcon" />
-        <ImageView
-            android:src="@android:drawable/stat_sys_phone_call"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/pAddress"
-            android:layout_marginLeft="30px"
-            android:id="@+id/PhoneIcon" />
+            android:drawableLeft="@android:drawable/ic_menu_directions" />
         <TextView
-            android:text="Phone"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -49,23 +39,20 @@
             android:textColor="#ff63b4fb"
             android:layout_below="@id/pAddress"
             android:id="@+id/pPhone"
-            android:layout_toRightOf="@id/PhoneIcon" />
-        <ImageView
-            android:src="@android:drawable/sym_action_email"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/pPhone"
-            android:layout_marginLeft="30px"
-            android:id="@+id/MailIcon" />
+            android:drawableLeft="@android:drawable/stat_sys_phone_call" />
         <TextView
-            android:text="mail"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textColor="#ff63b4fb"
-            android:layout_toRightOf="@+id/MailIcon"
             android:layout_marginLeft="20px"
             android:layout_below="@id/pPhone"
-            android:id="@+id/pMail" />
+            android:id="@+id/pMail"
+            android:drawableLeft="@android:drawable/sym_action_email" />
+        <ProgressBar
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/pMail"
+            android:id="@+id/progressBar" />
     </RelativeLayout>
 </ScrollView>
