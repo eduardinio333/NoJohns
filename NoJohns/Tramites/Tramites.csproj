@@ -66,6 +66,8 @@
     <Compile Include="Comentarios.cs" />
     <Compile Include="SignUpActivity.cs" />
     <Compile Include="Dialog_EditProfile.cs" />
+    <Compile Include="Requests\Requests.cs" />
+    <Compile Include="Requests\RequestClient.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />
@@ -205,5 +207,8 @@
       <Version>105.0.1.0</Version>
       <Visible>False</Visible>
     </XamarinComponentReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Requests\" />
   </ItemGroup>
 </Project>

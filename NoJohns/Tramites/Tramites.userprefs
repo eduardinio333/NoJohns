@@ -1,37 +1,12 @@
 ﻿<Properties StartupItem="Tramites.csproj">
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Android.TA17607YPD" />
-  <MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Android.a10f33aa" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="SignUpActivity.cs">
     <Files>
-<<<<<<< HEAD
-      <File FileName="MainActivity.cs" Line="9" Column="9" />
-      <File FileName="ProfileActivity.cs" Line="1" Column="1" />
-      <File FileName="Comentarios.cs" Line="40" Column="40" />
-=======
-      <File FileName="SignUpActivity.cs" Line="55" Column="18" />
-      <File FileName="MainActivity.cs" Line="52" Column="47" />
-      <File FileName="ProfileActivity.cs" Line="59" Column="28" />
-      <File FileName="ProfileActivityActionBar.xml" Line="5" Column="50" />
->>>>>>> 91dbf24e05f2c80dff953b06e28eff8940e19e1c
+      <File FileName="SignUpActivity.cs" Line="49" Column="3" />
     </Files>
-    <Pads>
-      <Pad Id="ProjectPad">
-        <State name="__root__">
-          <Node name="Tramites" expanded="True">
-            <Node name="Tramites" expanded="True">
-              <Node name="References" expanded="True" />
-              <Node name="ComponentReferenceFolder" expanded="True" selected="True" />
-              <Node name="Resources" expanded="True">
-                <Node name="values" expanded="True" />
-              </Node>
-            </Node>
-          </Node>
-        </State>
-      </Pad>
-    </Pads>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <MonoDevelop.Ide.ItemProperties.Tramites AndroidDesignerPreferredDevice="Nexus 4" />
 </Properties>

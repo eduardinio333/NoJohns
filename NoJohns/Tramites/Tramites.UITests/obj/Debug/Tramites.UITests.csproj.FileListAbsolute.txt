@@ -1,0 +1,9 @@
+C:\NoJohns\NoJohns\Tramites\Tramites.UITests\bin\Debug\Tramites.UITests.dll
+C:\NoJohns\NoJohns\Tramites\Tramites.UITests\bin\Debug\Tramites.UITests.pdb
+C:\NoJohns\NoJohns\Tramites\Tramites.UITests\bin\Debug\nunit.framework.dll
+C:\NoJohns\NoJohns\Tramites\Tramites.UITests\bin\Debug\Xamarin.UITest.dll
+C:\NoJohns\NoJohns\Tramites\Tramites.UITests\bin\Debug\nunit.framework.xml
+C:\NoJohns\NoJohns\Tramites\Tramites.UITests\bin\Debug\Xamarin.UITest.xml
+C:\NoJohns\NoJohns\Tramites\Tramites.UITests\obj\Debug\Tramites.UITests.csprojResolveAssemblyReference.cache
+C:\NoJohns\NoJohns\Tramites\Tramites.UITests\obj\Debug\Tramites.UITests.dll
+C:\NoJohns\NoJohns\Tramites\Tramites.UITests\obj\Debug\Tramites.UITests.pdb
