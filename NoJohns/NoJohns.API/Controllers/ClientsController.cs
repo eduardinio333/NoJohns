@@ -40,7 +40,7 @@ namespace NoJohns.API.Controllers
             return Ok(clients);
         }
         [Route("filter/{request}")]
-        [ResponseType(typeof(List<Clients>))]
+        [ResponseType(typeof(IEnumerable<Clients>))]
         public async Task<IHttpActionResult> GetClients(string request)
         {
             var oRequest = BaseRequest.ToRequest<ClientRequest>(request);
@@ -54,7 +54,7 @@ namespace NoJohns.API.Controllers
                 return NotFound();
             }
 
-            return Ok(Regresa);
+            return Ok(clients);
         }
 
         // PUT: api/Clients/5

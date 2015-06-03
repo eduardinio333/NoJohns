@@ -55,6 +55,7 @@
     <Compile Include="Requests\BaseRequest.cs" />
     <Compile Include="Requests\ClientRequest.cs" />
     <Compile Include="Requests\CommentRequest.cs" />
+    <Compile Include="Requests\ProcedureRequest.cs" />
     <Compile Include="Types.cs">
       <DependentUpon>NoJohnsModel.tt</DependentUpon>
     </Compile>
