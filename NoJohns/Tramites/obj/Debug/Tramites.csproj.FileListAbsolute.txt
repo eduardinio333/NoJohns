@@ -121,3 +121,4 @@ C:\NoJonhs\NoJohns\NoJohns\Tramites\bin\Debug\Mono.Android.dll.mdb
 C:\NoJonhs\NoJohns\NoJohns\Tramites\bin\Debug\System.Json.dll.mdb
 C:\NoJonhs\NoJohns\NoJohns\Tramites\bin\Debug\System.Web.Services.dll.mdb
 C:\NoJonhs\NoJohns\NoJohns\Tramites\bin\Debug\System.Xml.Linq.dll.mdb
+C:\NoJohns\NoJohns\Tramites\obj\Debug\res\menu\mymenu.xml

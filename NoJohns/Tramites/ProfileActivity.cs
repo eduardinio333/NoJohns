@@ -24,7 +24,7 @@ namespace Tramites
 			base.OnCreate (bundle);
 			SetContentView (Resource.Layout.Profile);
 			//int x = Intent.GetIntExtra ("id",0);
-			List<Clients> x = (List<Clients>)Intent.GetStringArrayListExtra ("lol");
+			//List<Clients> x = (List<Clients>)Intent.GetStringArrayListExtra ("lol");
 
 			TextView plName = FindViewById<TextView> (Resource.Id.plName);
 			TextView pAddress = FindViewById<TextView> (Resource.Id.pAddress);

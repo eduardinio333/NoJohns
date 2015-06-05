@@ -48,7 +48,7 @@ namespace Tramites
 				//List<Clients> subProducts = new List<Clients>(Model.subproduct);
 				var intent = new Intent(this, typeof(Profile));
 				//intent.PutStringArrayListExtra("lol",(IList<string>)desResponse);
-				intent.PutParcelableArrayListExtra("no",(IList<IParcelable>)desResponse);
+				//intent.PutParcelableArrayListExtra("no",(IList<IParcelable>)desResponse);
 				//intent.PutExtra("id",desResponse[0].Id);
 				StartActivity(intent);
 				try {
