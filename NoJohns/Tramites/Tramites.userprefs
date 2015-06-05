@@ -1,12 +1,35 @@
 ﻿<Properties StartupItem="Tramites.csproj">
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Android.a10f33aa" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="SignUpActivity.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Android.SelectDevice" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="CommentsActivity.cs">
     <Files>
-      <File FileName="SignUpActivity.cs" Line="49" Column="3" />
+      <File FileName="SignUpActivity.cs" Line="69" Column="5" />
+      <File FileName="CommentsActivity.cs" Line="18" Column="27" />
+      <File FileName="Requests\RequestComments.cs" Line="18" Column="1" />
     </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="Tramites" expanded="True">
+            <Node name="Tramites" expanded="True">
+              <Node name="Requests" expanded="True" />
+              <Node name="Resources" expanded="True">
+                <Node name="layout" expanded="True" />
+              </Node>
+              <Node name="CommentsActivity.cs" selected="True" />
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+      <Pad Id="MonoDevelop.NUnit.TestPad">
+        <State name="__root__">
+          <Node name="Tramites" expanded="True" selected="True" />
+        </State>
+      </Pad>
+    </Pads>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.ItemProperties.Tramites AndroidDesignerPreferredDevice="Nexus 4" />
 </Properties>

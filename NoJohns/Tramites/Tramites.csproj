@@ -68,6 +68,7 @@
     <Compile Include="Dialog_EditProfile.cs" />
     <Compile Include="Requests\Requests.cs" />
     <Compile Include="Requests\RequestClient.cs" />
+    <Compile Include="Requests\RequestComments.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />

@@ -44,16 +44,16 @@ namespace NoJohns.API.Controllers
         public async Task<IHttpActionResult> GetComments(string request)
         {
             var oRequest = BaseRequest.ToRequest<CommentRequest>(request);
-            IEnumerable<Comments> clients = db.CommentsSet.AsEnumerable();
+            IEnumerable<Comments> comments = db.CommentsSet.AsEnumerable();
 
-            clients = oRequest.FilterRequest(clients);
-
-            if (clients == null)
+            comments = oRequest.FilterRequest(comments);
+            var Regresa = comments.ToList<Comments>();
+            if (comments == null)
             {
                 return NotFound();
             }
 
-            return Ok(clients.ToList());
+            return Ok(Regresa);
         }
 
         // PUT: api/Comments/5

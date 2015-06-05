@@ -16,7 +16,7 @@ namespace NoJohns.API.Models.Requests
         public override IEnumerable<Comments> FilterRequest(IEnumerable<Comments> enumerable)
         {
             if (ClientId.HasValue)
-                enumerable = enumerable.Where(client => client.Id == ClientId);
+                enumerable = enumerable.Where(client => client.ClientId == ClientId);
             if (!String.IsNullOrWhiteSpace(Comment))
                 enumerable = enumerable.Where(client => String.Equals(client.Comment, Comment, StringComparison.InvariantCultureIgnoreCase));
             return enumerable;

@@ -3,6 +3,8 @@ using NoJohns.Portable;
 using Newtonsoft.Json;
 using RestSharp;
 using System.Collections.Generic;
+using System.Linq;
+using Android.Widget;
 
 
 namespace Tramites
@@ -13,17 +15,24 @@ namespace Tramites
 		{
 			string aux = URL + Parametros.ToRequestString ();
 			request = new RestRequest (aux, Method.GET);
-			var response = client.Execute<List<Clients>>(request);
+			response = client.Execute<List<Clients>>(request);
 			Resultado = JsonConvert.DeserializeObject<List<Clients>> (response.Content);
 		}
-		public RequestClient(Clients Parametros, int id){
-			string aux = "api/Clients/" + id.ToString ();
-			request = new RestRequest (aux, Method.PUT);
+		public RequestClient(Clients Parametros){
+			string aux = "api/Clients/";
+			if (Parametros.Id == 0)
+				request = new RestRequest (aux, Method.POST);
+			else {
+				aux += Parametros.Id.ToString ();
+				request = new RestRequest (aux, Method.PUT);
+			}
 			request.AddHeader("Content-Type", "application/json");
-			request.AddBody (Parametros);
+			request.AddObject(Parametros);
+			response = client.Execute<Clients>(request);
 
 		}
 		public List<Clients> Resultado{ get; set; }
+		public IRestResponse response {get;set;}
 		
 	}
 }

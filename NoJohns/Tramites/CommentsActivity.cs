@@ -16,14 +16,23 @@ using NoJohns.Portable;
 namespace Tramites
 {
 	[Activity (Label = "Commentarios")]			
-	public class CommentsActivity : Activity
+	public class CommentsActivity : ListActivity
 	{
 		protected override void OnCreate (Bundle bundle)
 		{
 			base.OnCreate (bundle);
-			List <string> comentarios = new List<string> ();
+			List <Comments> comentarios = new List<Comments> ();
 			var UserId = Intent.Extras.GetInt ("Id");
-
+			var a = new NoJohns.Portable.Requests.CommentRequest();
+			a.ClientId = UserId;
+			RequestComments aux = new RequestComments ("api/Comments/filter/", a);
+			comentarios = aux.Resultado;
+			List <string> items = new List<string> ();
+			foreach (var i in comentarios) {
+				items.Add (i.Comment);
+			}
+			ListAdapter = new ArrayAdapter<string> (this, Android.Resource.Layout.SimpleListItem1, items);
+			
 			//ListAdapter = new ArrayAdapter<string> (this, Android.Resource.Layout.SimpleListItem1, comentarios);
 			// Create your application here
 		}

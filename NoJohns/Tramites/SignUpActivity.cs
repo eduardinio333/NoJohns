@@ -33,19 +33,6 @@ namespace Tramites
 			EditText Phone = FindViewById<EditText> (Resource.Id.sPhone);
 			Button sSingUpButton = FindViewById<Button> (Resource.Id.sSignUpButton);
 
-			/*sSingUpButton.Click += delegate {
-				var client = new RestClient ("http://nojohns-api.azurewebsites.net/");
-				var request = new RestRequest ("api/clients/1/", Method.PUT);
-				request.AddParameter("Id",1);
-				request.AddParameter("Username", "Memolestasmucho");
-				request.AddParameter ("Password", "idontgiveafuck");
-				request.AddParameter ("Mail", "lel");
-				request.AddParameter ("fName", fName.Text);
-				request.AddParameter("lName",lName.Text);
-				request.AddParameter("Address",Address.Text);
-				request.AddParameter("Phone",Phone.Text);
-				var response = client.Execute<jsonProfile>(request);
-			};*/
 			// How To Use GET 
 			/*sSingUpButton.Click += delegate {
 				var a = new ClientRequest ();
@@ -59,21 +46,29 @@ namespace Tramites
 				Address.Text = Result.Address;
 				Phone.Text = Result.Phone;
 			};*/
-			sSingUpButton.Click += delegate {
+			/*sSingUpButton.Click += delegate {
 				Clients a = new Clients ();
-				a.Id = 1;
-				a.Username = "eduardinio333";
-				a.fName = "Eduardo";
-				a.lName = "Alonzo";
-				a.Mail = "eduardinio33340@gmail.com";
-				a.Password = "culo";
-				a.Phone = "9982429063";
-				a.Address = "Smz 46 Mz 11 Lote 1";
-				var request = new RequestClient (a, 1);
+				a.Username = Username.Text;
+				a.fName = fName.Text;
+				a.lName = lName.Text;
+				a.Mail = Mail.Text;
+				a.Password = Password.Text;
+				a.Phone = Phone.Text;
+				a.Address = Address.Text;
+				var request = new RequestClient (a);
+				if (request.response.Content == "" || request.response.StatusDescription == "Created"){
+					Toast.MakeText(this, "Success", ToastLength.Short).Show();
+				}
+				else{
+					Toast.MakeText(this, "Fail", ToastLength.Short).Show();
+				}
+			};*/
+			sSingUpButton.Click += delegate {
+				Intent aux = new  Intent (this, typeof(CommentsActivity));
+				aux.PutExtra("Id", 1);
+				StartActivity(aux);	
 
 			};
-
-
 		}
 	}
 }
