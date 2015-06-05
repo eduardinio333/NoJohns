@@ -23,9 +23,8 @@ namespace Tramites
 		{
 			base.OnCreate (bundle);
 			SetContentView (Resource.Layout.Profile);
-			//int x = Intent.GetIntExtra ("id",0);
-			//List<Clients> x = (List<Clients>)Intent.GetStringArrayListExtra ("lol");
-
+			string x = Intent.GetStringExtra ("Cliente") ?? "0";
+			Clients cliente = JsonConvert.DeserializeObject<List<Clients>> (x).First ();
 			TextView plName = FindViewById<TextView> (Resource.Id.plName);
 			TextView pAddress = FindViewById<TextView> (Resource.Id.pAddress);
 			TextView pPhone = FindViewById<TextView> (Resource.Id.pPhone);
@@ -39,14 +38,16 @@ namespace Tramites
 			var response = client.Execute<List<Clients>>(request1);
 			var desResponse = JsonConvert.DeserializeObject<List<Clients>>(response.Content);
 
-			plName.Text = desResponse[0].fName +" " + desResponse[0].lName;
-			pAddress.Text =desResponse[0].Address;
-			pPhone.Text = desResponse[0].Phone;
-			pMail.Text = desResponse[0].Mail;*/
+			plName.Text = cliente.fName +" " + cliente.lName;
+			pAddress.Text =cliente.Address;
+			pPhone.Text = cliente.Phone;
+			pMail.Text = cliente.Mail;*/
 			//response.res;
-			pMail.Text=x[0].Mail;
 
-
+			plName.Text = cliente.fName +" " + cliente.lName;
+			pAddress.Text =cliente.Address;
+			pPhone.Text = cliente.Phone;
+			pMail.Text = cliente.Mail;
 		}
 		public override bool OnCreateOptionsMenu(IMenu menu)
 		{

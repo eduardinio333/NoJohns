@@ -11,6 +11,7 @@ using Android.Views;
 using Android.Widget;
 using System.Threading;
 using NoJohns.Portable;
+using NoJohns.Portable.Requests;
 using Newtonsoft.Json;
 using RestSharp;
 
@@ -39,20 +40,19 @@ namespace Tramites
 			user.Text = null;
 			button.Click += delegate 
 			{
-				var client= new RestClient ("http://nojohns-api.azurewebsites.net/");
-				var request = new NoJohns.Portable.Requests.ClientRequest {Username=user.Text};
-				var request1= new RestRequest("api/clients/filter/"+request.ToRequestString(),Method.GET);
-				request1.RequestFormat = DataFormat.Json; 
-				var response = client.Execute<List<Clients>>(request1);
-				var desResponse = JsonConvert.DeserializeObject<List<Clients>>(response.Content);
-				//List<Clients> subProducts = new List<Clients>(Model.subproduct);
+				var a = new ClientRequest ();
+				a.Username = user.Text;
+				RequestClient aux = new RequestClient ("api/Clients/filter/", a);
+				Clients Result = aux.Resultado.First();
+				string cliente = aux.response.Content;
+
 				var intent = new Intent(this, typeof(Profile));
-				//intent.PutStringArrayListExtra("lol",(IList<string>)desResponse);
-				//intent.PutParcelableArrayListExtra("no",(IList<IParcelable>)desResponse);
-				//intent.PutExtra("id",desResponse[0].Id);
+				intent.PutExtra("Cliente", cliente);
+
+
 				StartActivity(intent);
 				try {
-					if (user.Text==desResponse[0].Username && pass.Text==desResponse[0].Password)
+					if (user.Text==Result.Username && pass.Text==Result.Password)
 					{
 
 						//Finish();
