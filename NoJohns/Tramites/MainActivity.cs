@@ -1,15 +1,18 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
 
 using Android.App;
 using Android.Content;
+using Android.OS;
 using Android.Runtime;
 using Android.Views;
 using Android.Widget;
-using Android.OS;
-using RestSharp;
+using System.Threading;
 using NoJohns.Portable;
-using System.Collections.Generic;
 using Newtonsoft.Json;
+using RestSharp;
 
 namespace Tramites
 {
@@ -42,13 +45,16 @@ namespace Tramites
 				request1.RequestFormat = DataFormat.Json; 
 				var response = client.Execute<List<Clients>>(request1);
 				var desResponse = JsonConvert.DeserializeObject<List<Clients>>(response.Content);
-
+				//List<Clients> subProducts = new List<Clients>(Model.subproduct);
+				var intent = new Intent(this, typeof(Profile));
+				//intent.PutStringArrayListExtra("lol",(IList<string>)desResponse);
+				intent.PutParcelableArrayListExtra("no",(IList<IParcelable>)desResponse);
+				//intent.PutExtra("id",desResponse[0].Id);
+				StartActivity(intent);
 				try {
 					if (user.Text==desResponse[0].Username && pass.Text==desResponse[0].Password)
 					{
-						var intent = new Intent(this, typeof(Profile));
-						intent.PutExtra("id",desResponse[0].Id);
-						StartActivity(intent);
+
 						//Finish();
 						}
 					}
@@ -64,12 +70,11 @@ namespace Tramites
 				StartActivity(intent);
 			};
 			button1.Click += delegate {
-				FragmentTransaction transaction = FragmentManager.BeginTransaction();
-				Dialog_EditProfile editProfileDialog = new Dialog_EditProfile();
-				editProfileDialog.Show(transaction,"dialog fragment");
+				Toast.MakeText (this, "ops", ToastLength.Short).Show();
 			};
 
 		}
+
 	}
 }
 

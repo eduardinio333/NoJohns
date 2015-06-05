@@ -1,10 +1,20 @@
 ﻿<Properties StartupItem="Tramites.csproj">
+<<<<<<< HEAD
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Android.SelectDevice" />
   <MonoDevelop.Ide.Workbench ActiveDocument="CommentsActivity.cs">
     <Files>
       <File FileName="SignUpActivity.cs" Line="69" Column="5" />
       <File FileName="CommentsActivity.cs" Line="18" Column="27" />
       <File FileName="Requests\RequestComments.cs" Line="18" Column="1" />
+=======
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Android.TA17607YPD" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="MainActivity.cs">
+    <Files>
+      <File FileName="SignUpActivity.cs" Line="1" Column="1" />
+      <File FileName="Resources\values\Strings.xml" Line="1" Column="1" />
+      <File FileName="ProfileActivity.cs" Line="1" Column="1" />
+      <File FileName="MainActivity.cs" Line="78" Column="45" />
+>>>>>>> 174a9bd6eb256bb2ed89328e415c440430279834
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
