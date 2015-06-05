@@ -15,7 +15,7 @@ using NoJohns.Portable;
 
 namespace Tramites
 {
-	[Activity (Label = "Commentarios")]			
+	[Activity (Label = "Comentarios")]			
 	public class CommentsActivity : ListActivity
 	{
 		protected override void OnCreate (Bundle bundle)

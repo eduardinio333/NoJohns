@@ -9,7 +9,7 @@
       </intent-filter>
     </activity>
     <activity android:icon="@drawable/logo" android:label="Profile" android:name="md5ed13aa5df9f0900ecb179369c4b60a16.Profile" />
-    <activity android:label="Commentarios" android:name="md5ed13aa5df9f0900ecb179369c4b60a16.CommentsActivity" />
+    <activity android:label="Comentarios" android:name="md5ed13aa5df9f0900ecb179369c4b60a16.CommentsActivity" />
     <activity android:label="SignUpActivity" android:name="md5ed13aa5df9f0900ecb179369c4b60a16.SignUpActivity" />
     <provider android:name="mono.MonoRuntimeProvider" android:exported="false" android:initOrder="2147483647" android:authorities="com.companyname.tramites.mono.MonoRuntimeProvider.__mono_init__" />
     <receiver android:name="mono.android.Seppuku">

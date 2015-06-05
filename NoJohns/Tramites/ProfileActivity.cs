@@ -19,7 +19,7 @@ namespace Tramites
 	[Activity (Label = "Profile",Icon = "@drawable/logo")]			
 	public class Profile : Activity
 	{
-		protected override async void OnCreate (Bundle bundle)
+		protected override void OnCreate (Bundle bundle)
 		{
 			base.OnCreate (bundle);
 			SetContentView (Resource.Layout.Profile);
@@ -30,24 +30,17 @@ namespace Tramites
 			TextView pPhone = FindViewById<TextView> (Resource.Id.pPhone);
 			TextView pMail = FindViewById<TextView> (Resource.Id.pMail);
 			ProgressBar pProgressBar = FindViewById<ProgressBar> (Resource.Id.progressBar);
-
-			/*var client= new RestClient ("http://nojohns-api.azurewebsites.net/");
-			var request = new NoJohns.Portable.Requests.ClientRequest {Username=user.Text};
-			var request1= new RestRequest("api/clients/filter/"+request.ToRequestString(),Method.GET);
-			request1.RequestFormat = DataFormat.Json; 
-			var response = client.Execute<List<Clients>>(request1);
-			var desResponse = JsonConvert.DeserializeObject<List<Clients>>(response.Content);
-
-			plName.Text = cliente.fName +" " + cliente.lName;
-			pAddress.Text =cliente.Address;
-			pPhone.Text = cliente.Phone;
-			pMail.Text = cliente.Mail;*/
-			//response.res;
+			Button ToComments = FindViewById<Button> (Resource.Id.ToComments);
 
 			plName.Text = cliente.fName +" " + cliente.lName;
 			pAddress.Text =cliente.Address;
 			pPhone.Text = cliente.Phone;
 			pMail.Text = cliente.Mail;
+			ToComments.Click += delegate {
+				var intent = new Intent(this, typeof(CommentsActivity));
+				intent.PutExtra("Id", cliente.Id);
+				StartActivity(intent);
+			};
 		}
 		public override bool OnCreateOptionsMenu(IMenu menu)
 		{

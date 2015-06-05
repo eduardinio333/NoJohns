@@ -75,14 +75,17 @@ namespace Tramites
 			// aapt resource value: 0x7f060005
 			public const int SignUpButton = 2131099653;
 			
+			// aapt resource value: 0x7f06000c
+			public const int ToComments = 2131099660;
+			
 			// aapt resource value: 0x7f060002
 			public const int User = 2131099650;
 			
 			// aapt resource value: 0x7f060006
 			public const int button1 = 2131099654;
 			
-			// aapt resource value: 0x7f060014
-			public const int editProfile = 2131099668;
+			// aapt resource value: 0x7f060015
+			public const int editProfile = 2131099669;
 			
 			// aapt resource value: 0x7f060008
 			public const int pAddress = 2131099656;
@@ -99,29 +102,29 @@ namespace Tramites
 			// aapt resource value: 0x7f06000b
 			public const int progressBar = 2131099659;
 			
-			// aapt resource value: 0x7f060011
-			public const int sAddress = 2131099665;
-			
-			// aapt resource value: 0x7f06000e
-			public const int sMail = 2131099662;
-			
-			// aapt resource value: 0x7f06000d
-			public const int sPassword = 2131099661;
-			
 			// aapt resource value: 0x7f060012
-			public const int sPhone = 2131099666;
-			
-			// aapt resource value: 0x7f060013
-			public const int sSignUpButton = 2131099667;
-			
-			// aapt resource value: 0x7f06000c
-			public const int sUsername = 2131099660;
+			public const int sAddress = 2131099666;
 			
 			// aapt resource value: 0x7f06000f
-			public const int sfName = 2131099663;
+			public const int sMail = 2131099663;
+			
+			// aapt resource value: 0x7f06000e
+			public const int sPassword = 2131099662;
+			
+			// aapt resource value: 0x7f060013
+			public const int sPhone = 2131099667;
+			
+			// aapt resource value: 0x7f060014
+			public const int sSignUpButton = 2131099668;
+			
+			// aapt resource value: 0x7f06000d
+			public const int sUsername = 2131099661;
 			
 			// aapt resource value: 0x7f060010
-			public const int slName = 2131099664;
+			public const int sfName = 2131099664;
+			
+			// aapt resource value: 0x7f060011
+			public const int slName = 2131099665;
 			
 			// aapt resource value: 0x7f060000
 			public const int text1 = 2131099648;

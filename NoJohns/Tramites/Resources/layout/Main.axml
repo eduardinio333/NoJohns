@@ -14,12 +14,14 @@
         android:layout_height="wrap_content"
         android:selectAllOnFocus="true"
         android:id="@+id/User"
+        android:singleLine="true"
         android:fontFamily="arial"
         android:hint="Username" />
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/Pass"
+        android:singleLine="true"
         android:fontFamily="arial"
         android:hint="Password"
         android:password="true" />

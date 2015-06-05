@@ -31,15 +31,22 @@ namespace Tramites
 
 			// Get our button from the layout resource,
 			// and attach an event to it
-			Button button = FindViewById<Button> (Resource.Id.Login);
+			Button LoginButton = FindViewById<Button> (Resource.Id.Login);
 			Button button1 = FindViewById<Button> (Resource.Id.button1);
 			EditText pass = FindViewById<EditText> (Resource.Id.Pass);
 			EditText user = FindViewById<EditText>(Resource.Id.User);
 			ImageView logo = FindViewById<ImageView> (Resource.Id.Logo);
 			Button SignUpButton = FindViewById<Button> (Resource.Id.SignUpButton);
 			user.Text = null;
-			button.Click += delegate 
+			ProgressDialog progress = new ProgressDialog(this);
+			progress.Indeterminate = true;
+			progress.SetProgressStyle(ProgressDialogStyle.Spinner);
+			progress.SetMessage("Contacting server. Please wait...");
+			progress.SetCancelable(true);
+			LoginButton.Click += delegate 
 			{
+				
+				progress.Show();
 				var a = new ClientRequest ();
 				a.Username = user.Text;
 				RequestClient aux = new RequestClient ("api/Clients/filter/", a);
@@ -48,20 +55,23 @@ namespace Tramites
 
 				var intent = new Intent(this, typeof(Profile));
 				intent.PutExtra("Cliente", cliente);
+				//try 
+				//{
 
-
-				StartActivity(intent);
-				try {
-					if (user.Text==Result.Username && pass.Text==Result.Password)
-					{
-
-						//Finish();
-						}
-					}
-				catch (SystemException)
+				if (user.Text==Result.Username && pass.Text==Result.Password)
 				{
-					user.Text="invalido";
+					progress.Cancel();
+					StartActivity(intent);
+					//Finish();
 				}
+				else{
+					Toast.MakeText(this, "Usuario o Contraseña incorrectos", ToastLength.Short).Show();
+				}
+
+				/*}
+				catch (SystemException){
+					user.Text="invalido";
+				}*/
 
 					
 			};
@@ -70,9 +80,20 @@ namespace Tramites
 				StartActivity(intent);
 			};
 			button1.Click += delegate {
-				Toast.MakeText (this, "ops", ToastLength.Short).Show();
+				/*ProgressDialog progress = new ProgressDialog(this);
+				progress.Indeterminate = true;
+				progress.SetProgressStyle(ProgressDialogStyle.Spinner);
+				progress.SetMessage("Contacting server. Please wait...");
+				progress.SetCancelable(false);
+				progress.Show();*/
 			};
 
+		}
+		public override bool OnCreateOptionsMenu(IMenu menu)
+		{
+			MenuInflater.Inflate(Resource.Menu.mymenu, menu);
+			base.OnPrepareOptionsMenu(menu);
+			return true;
 		}
 
 	}

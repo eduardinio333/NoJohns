@@ -7,36 +7,43 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/sUsername"
+        android:singleLine="true"
         android:hint="Usuario" />
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/sPassword"
+        android:singleLine="true"
         android:hint="Contraseña" />
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/sMail"
+        android:singleLine="true"
         android:hint="Correo Electrónico" />
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/sfName"
+        android:singleLine="true"
         android:hint="Nombre" />
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/slName"
+        android:singleLine="true"
         android:hint="Apellido" />
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/sAddress"
+        android:singleLine="true"
         android:hint="Dirección (opcional)" />
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/sPhone"
+        android:singleLine="true"
         android:hint="Teléfono" />
     <Button
         android:text="Sign Up"

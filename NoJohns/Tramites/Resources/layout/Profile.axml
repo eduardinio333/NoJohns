@@ -46,5 +46,14 @@
             android:layout_height="wrap_content"
             android:layout_below="@id/pMail"
             android:id="@+id/progressBar" />
+        <Button
+            android:text="Comentarios"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/progressBar"
+            android:id="@+id/ToComments"
+            android:layout_marginLeft="86.6dp"
+            android:layout_toRightOf="@id/progressBar"
+            android:layout_marginTop="28.3dp" />
     </RelativeLayout>
 </ScrollView>
