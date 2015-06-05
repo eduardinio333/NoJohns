@@ -20,6 +20,11 @@ namespace Tramites
 			EditText mtext = view.FindViewById<EditText> (Resource.Id.text1);
 			return view;
 		}
+		public override void OnActivityCreated(Bundle savedInstanceState){
+			Dialog.Window.RequestFeature (WindowFeatures.NoTitle);
+			base.OnActivityCreated (savedInstanceState);
+		
+		}
 	}
 }
 

@@ -179,7 +179,6 @@
     <None Include="packages\Xamarin.UITest.0.7.1\Xamarin.UITest.0.7.1.nupkg" />
     <None Include="packages\Xamarin.UITest.0.7.1\Xamarin.UITest-License.rtf" />
     <None Include="packages\repositories.config" />
-    <None Include="ProfileActivityActionBar.xml" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
@@ -200,6 +199,7 @@
     <AndroidResource Include="Resources\drawable-hdpi\Thumbs.db" />
     <AndroidResource Include="Resources\layout\SignUp.axml" />
     <AndroidResource Include="Resources\layout\Dialog_editProfile.axml" />
+    <AndroidResource Include="Resources\menu\mymenu.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Novell\Novell.MonoDroid.CSharp.targets" />
   <ItemGroup>
@@ -210,5 +210,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Requests\" />
+    <Folder Include="obj\Debug\res\menu\" />
+    <Folder Include="Resources\menu\" />
   </ItemGroup>
 </Project>
