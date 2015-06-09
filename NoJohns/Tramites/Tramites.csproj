@@ -51,7 +51,13 @@
       <HintPath>..\NoJohns.Portable\bin\Debug\NoJohns.Portable.dll</HintPath>
     </Reference>
     <Reference Include="Newtonsoft.Json">
-      <HintPath>packages\Newtonsoft.Json.6.0.8\lib\portable-net40+sl5+wp80+win8+wpa81\Newtonsoft.Json.dll</HintPath>
+      <HintPath>Components\Auth0Client-0.4.3\lib\android\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Auth.Android">
+      <HintPath>Components\xamarin.auth-1.2.3.1\lib\android\Xamarin.Auth.Android.dll</HintPath>
+    </Reference>
+    <Reference Include="Auth0Client.Android">
+      <HintPath>Components\Auth0Client-0.4.3\lib\android\Auth0Client.Android.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -69,6 +75,7 @@
     <Compile Include="Requests\Requests.cs" />
     <Compile Include="Requests\RequestClient.cs" />
     <Compile Include="Requests\RequestComments.cs" />
+    <Compile Include="LoginActivity.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />
@@ -201,11 +208,16 @@
     <AndroidResource Include="Resources\layout\SignUp.axml" />
     <AndroidResource Include="Resources\layout\Dialog_editProfile.axml" />
     <AndroidResource Include="Resources\menu\mymenu.xml" />
+    <AndroidResource Include="Resources\layout\Login.axml" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Novell\Novell.MonoDroid.CSharp.targets" />
   <ItemGroup>
     <XamarinComponentReference Include="restsharp">
       <Version>105.0.1.0</Version>
+      <Visible>False</Visible>
+    </XamarinComponentReference>
+    <XamarinComponentReference Include="xamarin.auth">
+      <Version>1.2.3.1</Version>
       <Visible>False</Visible>
     </XamarinComponentReference>
   </ItemGroup>

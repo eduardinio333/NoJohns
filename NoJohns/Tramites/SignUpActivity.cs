@@ -48,7 +48,7 @@ namespace Tramites
 			};*/
 			sSingUpButton.Click += delegate {
 				Clients a = new Clients ();
-				a.Username = Username.Text;
+					a.Username = Username.Text;
 				a.fName = fName.Text;
 				a.lName = lName.Text;
 				a.Mail = Mail.Text;

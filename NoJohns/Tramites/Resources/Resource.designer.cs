@@ -26,6 +26,7 @@ namespace Tramites
 		
 		public static void UpdateIdValues()
 		{
+			global::Auth0.SDK.Resource.String.library_name = global::Tramites.Resource.String.library_name;
 		}
 		
 		public partial class Attribute
@@ -149,13 +150,16 @@ namespace Tramites
 			public const int Dialog_editProfile = 2130903041;
 			
 			// aapt resource value: 0x7f030002
-			public const int Main = 2130903042;
+			public const int Login = 2130903042;
 			
 			// aapt resource value: 0x7f030003
-			public const int Profile = 2130903043;
+			public const int Main = 2130903043;
 			
 			// aapt resource value: 0x7f030004
-			public const int SignUp = 2130903044;
+			public const int Profile = 2130903044;
+			
+			// aapt resource value: 0x7f030005
+			public const int SignUp = 2130903045;
 			
 			static Layout()
 			{
@@ -186,17 +190,20 @@ namespace Tramites
 		public partial class String
 		{
 			
+			// aapt resource value: 0x7f040004
+			public const int action_compose = 2130968580;
+			
 			// aapt resource value: 0x7f040003
-			public const int action_compose = 2130968579;
+			public const int action_search = 2130968579;
 			
 			// aapt resource value: 0x7f040002
-			public const int action_search = 2130968578;
+			public const int app_name = 2130968578;
 			
 			// aapt resource value: 0x7f040001
-			public const int app_name = 2130968577;
+			public const int hello = 2130968577;
 			
 			// aapt resource value: 0x7f040000
-			public const int hello = 2130968576;
+			public const int library_name = 2130968576;
 			
 			static String()
 			{
