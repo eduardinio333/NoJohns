@@ -14,6 +14,7 @@ using NoJohns.Portable;
 using NoJohns.Portable.Requests;
 using Newtonsoft.Json;
 using RestSharp;
+using System.Threading.Tasks;
 
 namespace Tramites
 {
@@ -38,22 +39,22 @@ namespace Tramites
 			EditText user = FindViewById<EditText>(Resource.Id.User);
 			ImageView logo = FindViewById<ImageView> (Resource.Id.Logo);
 			Button SignUpButton = FindViewById<Button> (Resource.Id.SignUpButton);
-			user.Text = null;
-			LoginButton.Click += delegate 
+			ProgressBar progressBar = FindViewById<ProgressBar> (Resource.Id.progressBar1);
+			progressBar.Visibility = ViewStates.Gone;
+
+			LoginButton.Click += async delegate 
 			{
+				progressBar.Visibility = ViewStates.Visible;
 				var a = new ClientRequest ();
 				a.Username = user.Text;
 				RequestClient aux = new RequestClient ("api/Clients/filter/", a);
-				Clients Result = aux.Resultado.First();
-				string cliente = aux.response.Content;
-
-				var intent = new Intent(this, typeof(Profile));
-				intent.PutExtra("Cliente", cliente);
-				//try 
-				//{
-
-				if (user.Text==Result.Username && pass.Text==Result.Password)
+				var response = await aux.GetResponseContentAsync();
+				//var res = JsonConvert.DeserializeObject<List<Clients>> (response);
+				if (user.Text==response.Address && pass.Text==response.Password)
 				{
+					var intent = new Intent(this, typeof(Profile));
+					//var client = await aux.GetResponseStringAsync();
+					intent.PutExtra("Cliente", aux.getClientString());
 					StartActivity(intent);
 					//Finish();
 				}
@@ -61,12 +62,6 @@ namespace Tramites
 					Toast.MakeText(this, "Usuario o Contraseña incorrectos", ToastLength.Short).Show();
 				}
 
-				/*}
-				catch (SystemException){
-					user.Text="invalido";
-				}*/
-
-					
 			};
 			SignUpButton.Click += delegate {
 				var intent = new Intent(this, typeof(SignUpActivity));
@@ -88,7 +83,6 @@ namespace Tramites
 			base.OnPrepareOptionsMenu(menu);
 			return true;
 		}
-
 	}
 }
 

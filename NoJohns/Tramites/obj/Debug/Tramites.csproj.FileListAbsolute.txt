@@ -72,7 +72,7 @@ C:\NoJohns\NoJohns\Tramites\bin\Debug\Mono.Android.dll.mdb
 C:\NoJohns\NoJohns\Tramites\bin\Debug\System.Json.dll.mdb
 C:\NoJohns\NoJohns\Tramites\bin\Debug\System.Web.Services.dll.mdb
 C:\NoJohns\NoJohns\Tramites\bin\Debug\System.Xml.Linq.dll.mdb
-C:\NoJonhs\NoJohns\NoJohns\Tramites\obj\Debug\Tramites.csprojResolveAssemblyReference.cache
+C:\NoJohns\NoJohns\Tramites\obj\Debug\res\menu\mymenu.xml
 C:\NoJonhs\NoJohns\NoJohns\Tramites\bin\Debug\Tramites.dll
 C:\NoJonhs\NoJohns\NoJohns\Tramites\bin\Debug\Tramites.pdb
 C:\NoJonhs\NoJohns\NoJohns\Tramites\bin\Debug\Tramites.dll.mdb
@@ -84,6 +84,7 @@ C:\NoJonhs\NoJohns\NoJohns\Tramites\bin\Debug\RestSharp.MonoDroid.dll
 C:\NoJonhs\NoJohns\NoJohns\Tramites\bin\Debug\NoJohns.Portable.pdb
 C:\NoJonhs\NoJohns\NoJohns\Tramites\bin\Debug\NoJohns.Portable.dll.mdb
 C:\NoJonhs\NoJohns\NoJohns\Tramites\bin\Debug\Newtonsoft.Json.xml
+C:\NoJonhs\NoJohns\NoJohns\Tramites\obj\Debug\Tramites.csprojResolveAssemblyReference.cache
 C:\NoJonhs\NoJohns\NoJohns\Tramites\obj\Debug\Tramites.dll
 C:\NoJonhs\NoJohns\NoJohns\Tramites\obj\Debug\Tramites.pdb
 C:\NoJonhs\NoJohns\NoJohns\Tramites\obj\Debug\android\bin\com.companyname.tramites.apk
@@ -121,4 +122,3 @@ C:\NoJonhs\NoJohns\NoJohns\Tramites\bin\Debug\Mono.Android.dll.mdb
 C:\NoJonhs\NoJohns\NoJohns\Tramites\bin\Debug\System.Json.dll.mdb
 C:\NoJonhs\NoJohns\NoJohns\Tramites\bin\Debug\System.Web.Services.dll.mdb
 C:\NoJonhs\NoJohns\NoJohns\Tramites\bin\Debug\System.Xml.Linq.dll.mdb
-C:\NoJohns\NoJohns\Tramites\obj\Debug\res\menu\mymenu.xml

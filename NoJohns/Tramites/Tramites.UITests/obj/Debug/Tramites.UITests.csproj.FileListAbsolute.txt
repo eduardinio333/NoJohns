@@ -13,6 +13,5 @@ C:\NoJonhs\NoJohns\NoJohns\Tramites\Tramites.UITests\bin\Debug\nunit.framework.d
 C:\NoJonhs\NoJohns\NoJohns\Tramites\Tramites.UITests\bin\Debug\Xamarin.UITest.dll
 C:\NoJonhs\NoJohns\NoJohns\Tramites\Tramites.UITests\bin\Debug\nunit.framework.xml
 C:\NoJonhs\NoJohns\NoJohns\Tramites\Tramites.UITests\bin\Debug\Xamarin.UITest.xml
-C:\NoJonhs\NoJohns\NoJohns\Tramites\Tramites.UITests\obj\Debug\Tramites.UITests.csprojResolveAssemblyReference.cache
 C:\NoJonhs\NoJohns\NoJohns\Tramites\Tramites.UITests\obj\Debug\Tramites.UITests.dll
 C:\NoJonhs\NoJohns\NoJohns\Tramites\Tramites.UITests\obj\Debug\Tramites.UITests.pdb
