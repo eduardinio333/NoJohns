@@ -2,7 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android" android:versionCode="1" android:versionName="1.0" package="com.companyname.tramites">
   <uses-sdk android:minSdkVersion="16" />
   <application android:label="Tramites" android:theme="@android:style/Theme.Holo.Light" android:name="mono.android.app.Application" android:debuggable="true">
-    <activity android:icon="@drawable/logo" android:label="Tramites" android:name="md5ed13aa5df9f0900ecb179369c4b60a16.MainActivity">
+    <activity android:icon="@drawable/logo" android:label="Tramites" android:screenOrientation="portrait" android:name="md5ed13aa5df9f0900ecb179369c4b60a16.MainActivity">
       <intent-filter>
         <action android:name="android.intent.action.MAIN" />
         <category android:name="android.intent.category.LAUNCHER" />

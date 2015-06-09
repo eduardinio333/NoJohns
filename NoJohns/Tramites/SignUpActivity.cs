@@ -46,7 +46,7 @@ namespace Tramites
 				Address.Text = Result.Address;
 				Phone.Text = Result.Phone;
 			};*/
-			/*sSingUpButton.Click += delegate {
+			sSingUpButton.Click += delegate {
 				Clients a = new Clients ();
 				a.Username = Username.Text;
 				a.fName = fName.Text;
@@ -62,13 +62,13 @@ namespace Tramites
 				else{
 					Toast.MakeText(this, "Fail", ToastLength.Short).Show();
 				}
-			};*/
-			sSingUpButton.Click += delegate {
+			};
+			/*sSingUpButton.Click += delegate {
 				Intent aux = new  Intent (this, typeof(CommentsActivity));
 				aux.PutExtra("Id", 1);
 				StartActivity(aux);	
 
-			};
+			};*/
 		}
 	}
 }

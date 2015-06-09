@@ -31,9 +31,11 @@ namespace Tramites
 			TextView pMail = FindViewById<TextView> (Resource.Id.pMail);
 			ProgressBar pProgressBar = FindViewById<ProgressBar> (Resource.Id.progressBar);
 			Button ToComments = FindViewById<Button> (Resource.Id.ToComments);
-
 			plName.Text = cliente.fName +" " + cliente.lName;
 			pAddress.Text =cliente.Address;
+			if (cliente.Address == null) {
+				pAddress.Text = "Dirección no establecida";
+			}
 			pPhone.Text = cliente.Phone;
 			pMail.Text = cliente.Mail;
 			ToComments.Click += delegate {
@@ -53,9 +55,10 @@ namespace Tramites
 			switch (item.ItemId)
 			{
 			case Resource.Id.editProfile:
-				FragmentTransaction transaction = FragmentManager.BeginTransaction();
-				Dialog_EditProfile editProfileDialog = new Dialog_EditProfile();
-				editProfileDialog.Show(transaction,"dialog fragment");
+				FragmentTransaction transaction = FragmentManager.BeginTransaction ();
+				Dialog_EditProfile editProfileDialog = new Dialog_EditProfile ();
+				editProfileDialog.Show (transaction, "dialog fragment");
+
 				return true;
 			}
 			return base.OnOptionsItemSelected(item);

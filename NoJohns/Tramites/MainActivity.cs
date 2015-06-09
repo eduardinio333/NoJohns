@@ -18,7 +18,8 @@ using RestSharp;
 namespace Tramites
 {
 	
-	[Activity (Label = "Tramites", MainLauncher = true, Icon = "@drawable/logo")]
+	[Activity (Label = "Tramites", MainLauncher = true, Icon = "@drawable/logo",
+		ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait)]
 	public class MainActivity : Activity
 	{
 		protected override void OnCreate (Bundle bundle)
@@ -38,15 +39,8 @@ namespace Tramites
 			ImageView logo = FindViewById<ImageView> (Resource.Id.Logo);
 			Button SignUpButton = FindViewById<Button> (Resource.Id.SignUpButton);
 			user.Text = null;
-			ProgressDialog progress = new ProgressDialog(this);
-			progress.Indeterminate = true;
-			progress.SetProgressStyle(ProgressDialogStyle.Spinner);
-			progress.SetMessage("Contacting server. Please wait...");
-			progress.SetCancelable(true);
 			LoginButton.Click += delegate 
 			{
-				
-				progress.Show();
 				var a = new ClientRequest ();
 				a.Username = user.Text;
 				RequestClient aux = new RequestClient ("api/Clients/filter/", a);
@@ -60,7 +54,6 @@ namespace Tramites
 
 				if (user.Text==Result.Username && pass.Text==Result.Password)
 				{
-					progress.Cancel();
 					StartActivity(intent);
 					//Finish();
 				}
