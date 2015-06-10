@@ -29,7 +29,7 @@ namespace Tramites
 
 			// Set our view from the "main" layout resource
 			SetContentView (Resource.Layout.Main);
-
+			StartActivity (typeof(LoginActivity));
 			// Get our button from the layout resource,
 			// and attach an event to it
 			Button LoginButton = FindViewById<Button> (Resource.Id.Login);
