@@ -5,6 +5,7 @@ using RestSharp;
 using System.Collections.Generic;
 using System.Linq;
 using Android.Widget;
+using System.Threading.Tasks;
 
 
 namespace Tramites
@@ -15,9 +16,22 @@ namespace Tramites
 		{
 			string aux = URL + Parametros.ToRequestString ();
 			request = new RestRequest (aux, Method.GET);
-			response = client.Execute<List<Clients>>(request);
-			Resultado = JsonConvert.DeserializeObject<List<Clients>> (response.Content);
+			//response = client.Execute<List<Clients>>(request);
+			//Resultado = JsonConvert.DeserializeObject<List<Clients>> (response.Content);
 		}
+
+		public Task<Clients> GetResponseContentAsync()
+		{
+			var tcs=new TaskCompletionSource<Clients>();
+			client.ExecuteAsync(request, response => {
+				Resultado = JsonConvert.DeserializeObject<List<Clients>> (response.Content);
+				tcs.SetResult(Resultado[0]);
+				clientString = response.Content;
+				//
+			});
+			return tcs.Task;
+		}
+			
 		public RequestClient(Clients Parametros){
 			string aux = "api/Clients/";
 			if (Parametros.Id == 0)
@@ -31,6 +45,11 @@ namespace Tramites
 			response = client.Execute<Clients>(request);
 
 		}
+		public string getClientString(){
+			return clientString;
+		}
+
+		private string clientString { get; set; }
 		public List<Clients> Resultado{ get; set; }
 		public IRestResponse response {get;set;}
 		
