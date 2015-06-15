@@ -23,7 +23,7 @@ namespace NoJohns.Portable
         public string Description { get; set; }
         public int TypesId { get; set; }
         public decimal Price { get; set; }
-        public string Status { get; set; }
+        public Boolean Status { get; set; }
 
         public virtual Types Types { get; set; }
         public virtual ICollection<ClientsProcedures> ClientsProcedures { get; set; }

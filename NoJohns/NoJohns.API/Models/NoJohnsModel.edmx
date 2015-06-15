@@ -33,6 +33,7 @@
           </Key>
           <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="ClientId" Type="int" Nullable="false" />
+          <Property Name="AuthorUser" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="Comment" Type="nvarchar(max)" Nullable="false" />
           <Property Name="ClientType" Type="bit" Nullable="false" />
         </EntityType>
@@ -44,7 +45,7 @@
           <Property Name="Description" Type="nvarchar(max)" Nullable="false" />
           <Property Name="TypesId" Type="int" Nullable="false" />
           <Property Name="Price" Type="decimal" Precision="18" Scale="0" Nullable="false" />
-          <Property Name="Status" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Status" Type="bit" Nullable="false" />
         </EntityType>
         <EntityType Name="TypesSet">
           <Key>
@@ -187,6 +188,7 @@
           <Property Name="Comment" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
           <Property Name="ClientType" Type="Boolean" Nullable="false" />
           <NavigationProperty Name="Clients" Relationship="NoJohnsModel.ClientsComments" FromRole="Comments" ToRole="Clients" />
+          <Property Name="AuthorUser" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
         </EntityType>
         <Association Name="ClientsComments">
           <End Type="NoJohnsModel.Clients" Role="Clients" Multiplicity="1" />
@@ -216,7 +218,7 @@
           <Property Name="Description" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
           <Property Name="TypesId" Type="Int32" Nullable="false" />
           <Property Name="Price" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
-          <Property Name="Status" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="Status" Type="Boolean" Nullable="false" />
           <NavigationProperty Name="Types" Relationship="NoJohnsModel.ProceduresTypes" FromRole="Procedures" ToRole="Types" />
           <NavigationProperty Name="ClientsProcedures" Relationship="NoJohnsModel.ProceduresClientsProcedures" FromRole="Procedures" ToRole="ClientsProcedures" />
         </EntityType>
@@ -290,7 +292,8 @@
     <EntitySetMapping Name="CommentsSet">
       <EntityTypeMapping TypeName="IsTypeOf(NoJohnsModel.Comments)">
         <MappingFragment StoreEntitySet="CommentsSet">
-          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="AuthorUser" ColumnName="AuthorUser" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
           <ScalarProperty Name="ClientId" ColumnName="ClientId" />
           <ScalarProperty Name="Comment" ColumnName="Comment" />
           <ScalarProperty Name="ClientType" ColumnName="ClientType" />

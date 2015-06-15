@@ -4,4 +4,3 @@ C:\NoJohns\NoJohns\NoJohns.Portable\bin\Debug\Newtonsoft.Json.dll
 C:\NoJohns\NoJohns\NoJohns.Portable\bin\Debug\Newtonsoft.Json.xml
 C:\NoJohns\NoJohns\NoJohns.Portable\obj\Debug\NoJohns.Portable.dll
 C:\NoJohns\NoJohns\NoJohns.Portable\obj\Debug\NoJohns.Portable.pdb
-C:\NoJohns\NoJohns\NoJohns.Portable\obj\Debug\NoJohns.Portable.csprojResolveAssemblyReference.cache

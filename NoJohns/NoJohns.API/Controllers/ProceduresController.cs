@@ -11,9 +11,11 @@ using System.Web.Http;
 using System.Web.Http.Description;
 using NoJohns.API.Models;
 using NoJohns.Portable;
+using NoJohns.Portable.Requests;
 
 namespace NoJohns.API.Controllers
 {
+      [RoutePrefix("api/Procedures")]
     public class ProceduresController : ApiController
     {
         private NoJohnsModelContainer db = new NoJohnsModelContainer();
@@ -35,6 +37,23 @@ namespace NoJohns.API.Controllers
             }
 
             return Ok(procedures);
+        }
+        [Route("filter/{request}")]
+        [ResponseType(typeof(List<Procedures>))]
+        public async Task<IHttpActionResult> GetProcedures(string request)
+        {
+            var oRequest = BaseRequest.ToRequest<ProcedureRequest>(request);
+            IEnumerable<Procedures> procedures = db.ProceduresSet.AsEnumerable();
+
+            procedures = oRequest.FilterRequest(procedures);
+            var Regresa = procedures.ToList<Procedures>();
+
+            if (procedures == null)
+            {
+                return NotFound();
+            }
+
+            return Ok(Regresa);
         }
 
         // PUT: api/Procedures/5

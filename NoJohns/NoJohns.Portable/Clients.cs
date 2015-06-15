@@ -16,8 +16,8 @@ namespace NoJohns.Portable
     {
         public Clients()
         {
-            /*this.Comments = new HashSet<Comments>();
-            this.ClientsProcedures = new HashSet<ClientsProcedures>();*/
+            this.Comments = new HashSet<Comments>();
+            this.ClientsProcedures = new HashSet<ClientsProcedures>();
         }
     
         public int Id { get; set; }

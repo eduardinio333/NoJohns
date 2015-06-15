@@ -7,14 +7,20 @@ using System.Threading.Tasks;
 
 namespace NoJohns.Portable.Requests
 {
-    class ProcedureRequest : BaseRequest <Procedures>
+    public class ProcedureRequest : BaseRequest <Procedures>
     {
-        int? Type { get; set; }
-
+        public int? Type { get; set; }
+        public bool? Status { get; set; }
+        public int? Price { get; set; }
         public override IEnumerable<Procedures> FilterRequest(IEnumerable<Procedures> enumerable)
         {
+            
             if (Type.HasValue)
                 enumerable = enumerable.Where(c => c.TypesId == Type);
+            if (Status.HasValue)
+                enumerable = enumerable.Where(c => Boolean.Equals(c.Status, Status));
+            if (Price.HasValue)
+                enumerable = enumerable.Where(c => c.Price == Price);
 
             return enumerable;
         }

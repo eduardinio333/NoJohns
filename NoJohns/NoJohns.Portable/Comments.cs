@@ -16,6 +16,7 @@ namespace NoJohns.Portable
     {
         public int Id { get; set; }
         public int ClientId { get; set; }
+        public string AuthorUser { get; set; }
         public string Comment { get; set; }
         public bool ClientType { get; set; }
     

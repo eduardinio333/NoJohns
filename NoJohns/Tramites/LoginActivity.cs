@@ -12,12 +12,15 @@ using Android.Views;
 using Android.Widget;
 using Xamarin.Auth;
 using System.Json;
+using NoJohns;
+using NoJohns.Portable.Requests;
 using System.Threading.Tasks;
 
 
 namespace Tramites
 {
-	[Activity (Label = "LoginActivity")]			
+	[Activity (Label = "LoginActivity", Icon = "@drawable/logo",
+		ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait)]			
 	public class LoginActivity : Activity
 	{
 		void LoginToFacebook (bool allowCancel){
@@ -64,16 +67,54 @@ namespace Tramites
 		{
 			base.OnCreate (bundle);
 			SetContentView (Resource.Layout.Login);
+			Button LoginButton = FindViewById<Button> (Resource.Id.Login);
+			Button button1 = FindViewById<Button> (Resource.Id.button1);
+			EditText pass = FindViewById<EditText> (Resource.Id.Pass);
+			EditText user = FindViewById<EditText>(Resource.Id.User);
+			ImageView logo = FindViewById<ImageView> (Resource.Id.Logo);
+			Button SignUpButton = FindViewById<Button> (Resource.Id.SignUpButton);
+			//ProgressBar progressBar = FindViewById<ProgressBar> (Resource.Id.progressBar1);
+			//ProgressBar progressBar = 
+			//progressBar.Visibility = ViewStates.Gone;
 
-			var facebook = FindViewById<Button> (Resource.Id.Login);			
+			LoginButton.Click += async delegate 
+			{
+				//progressBar.Visibility = ViewStates.Visible;
+				var a = new ClientRequest ();
+				a.Username = user.Text;
+				RequestClient aux = new RequestClient ("api/Clients/filter/", a);
+				var response = await aux.GetResponseContentAsync();
+				//var res = JsonConvert.DeserializeObject<List<Clients>> (response);
+				if (user.Text==response.Address && pass.Text==response.Password)
+				{
+					var intent = new Intent(this, typeof(Profile));
+					//var client = await aux.GetResponseStringAsync();
+					intent.PutExtra("Cliente", aux.getClientString());
+					StartActivity(intent);
+					//Finish();
+				}
+				else{
+					Toast.MakeText(this, "Usuario o Contraseña incorrectos", ToastLength.Short).Show();
+				}
+
+			};
+			SignUpButton.Click += delegate {
+				var intent = new Intent(this, typeof(SignUpActivity));
+				StartActivity(intent);
+			};
+			var facebook = FindViewById<Button> (Resource.Id.button1);			
 			facebook.Click += delegate { LoginToFacebook(true);};
 
-			/*var facebookNoCancel = FindViewById<Button> (Resource.Id.FacebookButtonNoCancel);
-			facebookNoCancel.Click += delegate { LoginToFacebook(false);};
-		*/
-
+			/*var facebookNoCancel = FindViewById<Button> (Resource.Id.FacebookButtonNoCancel);*/
+			//facebookNoCancel.Click += delegate { LoginToFacebook(false);};
 		}
-
+		
+		public override bool OnCreateOptionsMenu(IMenu menu)
+		{
+			MenuInflater.Inflate(Resource.Menu.mymenu, menu);
+			base.OnPrepareOptionsMenu(menu);
+			return true;
+		}	
 	}
 }
 

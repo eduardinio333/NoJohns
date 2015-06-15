@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 namespace NoJohns.API.Models.Requests
 {
 
-    class CommentRequest : BaseRequest <Comments>
+    public class CommentRequest : BaseRequest <Comments>
     {
         public int? ClientId { get; set; }
         public string Comment { get; set; }

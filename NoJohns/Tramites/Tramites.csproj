@@ -76,6 +76,7 @@
     <Compile Include="Requests\RequestClient.cs" />
     <Compile Include="Requests\RequestComments.cs" />
     <Compile Include="LoginActivity.cs" />
+    <Compile Include="Requests\RequestProcedures.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />

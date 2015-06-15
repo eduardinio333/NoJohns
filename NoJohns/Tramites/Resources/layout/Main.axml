@@ -1,50 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
-    android:layout_width="fill_parent"
-    android:layout_height="fill_parent">
-    <ImageView
-        android:src="@drawable/logo"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20px"
-        android:id="@+id/Logo" />
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:selectAllOnFocus="true"
-        android:id="@+id/User"
-        android:singleLine="true"
-        android:fontFamily="arial"
-        android:hint="Username" />
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/Pass"
-        android:singleLine="true"
-        android:fontFamily="arial"
-        android:hint="Password"
-        android:password="true" />
+<RelativeLayout xmlns:p1="http://schemas.android.com/apk/res/android"
+    p1:minWidth="25px"
+    p1:minHeight="25px"
+    p1:layout_width="match_parent"
+    p1:layout_height="match_parent"
+    p1:id="@+id/relativeLayout1">
     <Button
-        android:text="Log In"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/Login" />
-    <Button
-        android:text="Sign Up"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/SignUpButton" />
-    <Button
-        android:text="Button"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/button1" />
-    <ProgressBar
-        style="?android:attr/progressBarStyleLarge"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/progressBar1"
-        xmlns:tools="http://schemas.android.com/tools"
-        tools:visibility="gone" />
-</LinearLayout>
+        p1:text="New Request"
+        p1:layout_width="151.0dp"
+        p1:layout_height="wrap_content"
+        p1:layout_centerHorizontal="true"
+        p1:layout_marginTop="100.0dp"
+        p1:id="@+id/Request" />
+    <ListView
+        p1:minWidth="25px"
+        p1:minHeight="25px"
+        p1:layout_width="wrap_content"
+        p1:layout_height="wrap_content"
+        p1:layout_marginTop="50.0dp"
+        p1:id="@+id/Recent" />
+</RelativeLayout>

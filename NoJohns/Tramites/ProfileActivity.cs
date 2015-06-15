@@ -29,7 +29,7 @@ namespace Tramites
 			TextView pAddress = FindViewById<TextView> (Resource.Id.pAddress);
 			TextView pPhone = FindViewById<TextView> (Resource.Id.pPhone);
 			TextView pMail = FindViewById<TextView> (Resource.Id.pMail);
-			ProgressBar pProgressBar = FindViewById<ProgressBar> (Resource.Id.progressBar);
+			//ProgressBar pProgressBar = FindViewById<ProgressBar> (Resource.Id.progressBar);
 			Button ToComments = FindViewById<Button> (Resource.Id.ToComments);
 			plName.Text = cliente.fName +" " + cliente.lName;
 			pAddress.Text =cliente.Address;

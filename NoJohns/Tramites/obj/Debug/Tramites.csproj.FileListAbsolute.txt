@@ -34,7 +34,6 @@ C:\NoJohns\NoJohns\Tramites\bin\Debug\NoJohns.Portable.dll
 C:\NoJohns\NoJohns\Tramites\bin\Debug\RestSharp.MonoDroid.dll
 C:\NoJohns\NoJohns\Tramites\bin\Debug\NoJohns.Portable.pdb
 C:\NoJohns\NoJohns\Tramites\bin\Debug\NoJohns.Portable.dll.mdb
-C:\NoJohns\NoJohns\Tramites\bin\Debug\Newtonsoft.Json.xml
 C:\NoJohns\NoJohns\Tramites\obj\Debug\Tramites.csprojResolveAssemblyReference.cache
 C:\NoJohns\NoJohns\Tramites\obj\Debug\Tramites.dll
 C:\NoJohns\NoJohns\Tramites\obj\Debug\Tramites.pdb
@@ -122,3 +121,7 @@ C:\NoJonhs\NoJohns\NoJohns\Tramites\bin\Debug\Mono.Android.dll.mdb
 C:\NoJonhs\NoJohns\NoJohns\Tramites\bin\Debug\System.Json.dll.mdb
 C:\NoJonhs\NoJohns\NoJohns\Tramites\bin\Debug\System.Web.Services.dll.mdb
 C:\NoJonhs\NoJohns\NoJohns\Tramites\bin\Debug\System.Xml.Linq.dll.mdb
+C:\NoJohns\NoJohns\Tramites\bin\Debug\Auth0Client.Android.dll
+C:\NoJohns\NoJohns\Tramites\bin\Debug\Xamarin.Auth.Android.dll
+C:\NoJohns\NoJohns\Tramites\bin\Debug\Xamarin.Auth.Android.xml
+C:\NoJohns\NoJohns\Tramites\obj\Debug\res\layout\login.xml

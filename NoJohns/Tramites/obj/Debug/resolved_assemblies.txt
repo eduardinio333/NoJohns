@@ -1,4 +1,6 @@
-C:\NoJonhs\NoJohns\NoJohns\Tramites\bin\Debug\Tramites.dll
-C:\NoJonhs\NoJohns\NoJohns\Tramites\packages\Newtonsoft.Json.6.0.8\lib\portable-net40+sl5+wp80+win8+wpa81\Newtonsoft.Json.dll
-C:\NoJonhs\NoJohns\NoJohns\NoJohns.Portable\bin\Debug\NoJohns.Portable.dll
-C:\NoJonhs\NoJohns\NoJohns\Tramites\Components\restsharp-105.0.1.0\lib\android\RestSharp.MonoDroid.dll
+C:\NoJohns\NoJohns\Tramites\bin\Debug\Tramites.dll
+C:\NoJohns\NoJohns\Tramites\Components\Auth0Client-0.4.3\lib\android\Auth0Client.Android.dll
+C:\NoJohns\NoJohns\Tramites\Components\Auth0Client-0.4.3\lib\android\Newtonsoft.Json.dll
+C:\NoJohns\NoJohns\NoJohns.Portable\bin\Debug\NoJohns.Portable.dll
+C:\NoJohns\NoJohns\Tramites\Components\restsharp-105.0.1.0\lib\android\RestSharp.MonoDroid.dll
+C:\NoJohns\NoJohns\Tramites\Components\xamarin.auth-1.2.3.1\lib\android\Xamarin.Auth.Android.dll
